@@ -1,4 +1,4 @@
 {
-  "only-arches": ["arm", "aarch64", "x86_64"]
+  "only-arches": ["x86_64"]
 }
 
