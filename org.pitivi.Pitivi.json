@@ -261,7 +261,7 @@
                 {
                     "type": "git",
                     "url": "https://git.ffmpeg.org/ffmpeg.git",
-                    "branch": "e3a1c0491fa2beb6562f9960e9cb3af673f3bf94"
+                    "branch": "670d3189e9ef674e4167cec3145ea4c4c172d581"
                 }
             ]
         },
@@ -285,9 +285,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.12.3",
+                    "branch": "1.12.4",
                     "url": "git://anongit.freedesktop.org/gstreamer/gstreamer",
-                    "commit": "a6653b617cf42de70be087188d41c1cff6193b05"
+                    "commit": "505a24ff6843a04e4f75c5e03caa7b2774806fc3"
                 }
             ]
         },
@@ -299,9 +299,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.12.3",
+                    "branch": "1.12.4",
                     "url": "git://anongit.freedesktop.org/gstreamer/gst-plugins-base",
-                    "commit": "c7272689ddce50afdc53f89f70802fd9a4ccc95a"
+                    "commit": "e07c69f65598068b380753066783a1c67e3d4464"
                 }
             ]
         },
@@ -313,9 +313,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.12.3",
+                    "branch": "1.12.4",
                     "url": "git://anongit.freedesktop.org/gstreamer/gst-plugins-good",
-                    "commit": "4ce0249911fb4dda1a7e643a91490a10f2a6d415"
+                    "commit": "224938300a3b0fd8263422c3548576ac939032e5"
                 }
             ]
         },
@@ -327,9 +327,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.12.3",
+                    "branch": "1.12.4",
                     "url": "git://anongit.freedesktop.org/gstreamer/gst-plugins-ugly",
-                    "commit": "ffbf076dd13783786d7c7147b4d909af52f7b341"
+                    "commit": "46fab99f2ef5581d63c2d11c57fb741553ede37f"
                 }
             ]
         },
@@ -360,9 +360,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.12.3",
+                    "branch": "1.12.4",
                     "url": "git://anongit.freedesktop.org/gstreamer/gst-plugins-bad",
-                    "commit": "8f66ff25f9cabc170c57d75a74984103c7fcb965"
+                    "commit": "cbdbd8d4f6893e6042dbf7b8258e23a8d2aaf081"
                 },
                 {
                     "type": "patch",
@@ -378,9 +378,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.12.3",
+                    "branch": "1.12.4",
                     "url": "git://anongit.freedesktop.org/gstreamer/gst-libav",
-                    "commit": "326c74123d969a7ea0eccbfdef5fa45ce68076ad"
+                    "commit": "2a1098380969a52c2a89abfe52f0d034638a4e69"
                 }
             ]
         },
@@ -392,9 +392,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.12.3",
+                    "branch": "1.12.4",
                     "url": "git://anongit.freedesktop.org/gstreamer/gst-python",
-                    "commit": "705c1c09228c0a95150ea86cd536bcb0c2c74e51"
+                    "commit": "d8d6347c7cd62f0a86d1a3f75e1107a44cee6b2a"
                 }
             ]
         },
@@ -407,9 +407,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.12.3",
+                    "branch": "1.12.4",
                     "url": "git://anongit.freedesktop.org/gstreamer/gst-devtools",
-                    "commit": "4a95cb6fb519e6d5ef2f5b0e33a4205da987059d"
+                    "commit": "5d4f01debcae28d12613b668c65a4263e2d3f42f"
                 }
             ]
         },
@@ -421,9 +421,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.12.3",
+                    "branch": "1.12.4",
                     "url": "git://anongit.freedesktop.org/gstreamer/gstreamer-vaapi",
-                    "commit": "8d2884ec349ba8e402e9251c6e96b2e1ff23da69"
+                    "commit": "e540e0899421d580423f41a7bd65307923eb6a26"
                 }
             ]
         },
@@ -435,9 +435,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.12.3",
+                    "branch": "1.12.4",
                     "url": "git://anongit.freedesktop.org/gstreamer/gst-editing-services",
-                    "commit": "1ef0ba86926e2b186548ae22353bd7bbf9e3bd77"
+                    "commit": "f8391172f3419dc8cef69753c30a181b5896e240"
                 },
                 {
                     "type": "patch",
