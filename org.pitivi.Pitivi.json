@@ -335,13 +335,19 @@
         },
         {
             "name": "gavl",
-            "config-opts": ["--without-doxygen"],
             "rm-configure": true,
+            "config-opts": [
+                "--without-doxygen"
+            ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "http://downloads.sourceforge.net/sourceforge/gmerlin/gavl-1.4.0.tar.gz",
+                    "url": "https://sourceforge.net/projects/gmerlin/files/gavl/1.4.0/gavl-1.4.0.tar.gz",
                     "sha256": "51aaac41391a915bd9bad07710957424b046410a276e7deaff24a870929d33ce"
+                },
+                {
+                    "type": "patch",
+                    "path": "gavl/ubuntu_armel_ftbfs.patch"
                 },
                 {
                     "type": "script",
