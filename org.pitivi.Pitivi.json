@@ -127,6 +127,18 @@
                     "type": "archive",
                     "url": "https://pypi.python.org/packages/f5/f0/9da3ef24ea7eb0ccd12430a261b66eca36b924aeef06e17147f9f9d7d310/matplotlib-2.0.2.tar.gz",
                     "sha256": "0ffbc44faa34a8b1704bc108c451ecf87988f900ef7ce757b8e2e84383121ff1"
+                },
+                {
+                    "type": "patch",
+                    "path": "matplotlib/gtk3agg_check_no-multiprocessing.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "matplotlib/gtk3cairo_check_no-multiprocessing.patch"
+                },
+                {
+                    "type": "file",
+                    "path": "matplotlib/setup.cfg"
                 }
             ]
         },

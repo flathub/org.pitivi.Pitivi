@@ -1,0 +1,22 @@
+Author: Julian Taylor <jtaylor.debian@googlemail.com>
+Subject: Avoid using multiprocessing to figure out if Agg backend should be used
+
+   Seems to cause a dead-lock on many Debian systems.
+   We have all necessary dependencies to support Agg so enable the backend
+   unconditionally.
+
+Origin: Ubuntu
+Last-Update: 2014-07-10
+
+--- matplotlib-2/setupext.py.orig	2018-02-08 22:26:23.040580669 +0000
++++ matplotlib-2/setupext.py	2018-02-08 22:27:56.117310250 +0000
+@@ -1718,6 +1718,9 @@
+         if 'TRAVIS' in os.environ:
+             raise CheckFailed("Can't build with Travis")
+ 
++        BackendAgg.force = True
++        return "ok"
++
+         # This check needs to be performed out-of-process, because
+         # importing gi and then importing regular old pygtk afterward
+         # segfaults the interpreter.
