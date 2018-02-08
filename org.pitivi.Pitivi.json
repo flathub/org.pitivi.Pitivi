@@ -373,6 +373,14 @@
                 {
                     "type": "patch",
                     "path": "bad/0001-compositor-Add-support-for-crossfade-blending.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "bad/0002-meson-fix-gl-check.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "bad/0003-meson-fix-gl-variable-names.patch"
                 }
             ]
         },
