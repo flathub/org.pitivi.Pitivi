@@ -450,10 +450,9 @@
             "config-opts": ["-Ddisable_gtkdoc=true"],
             "sources": [
                 {
-                    "type": "git",
-                    "branch": "1.12.4",
-                    "url": "git://anongit.freedesktop.org/gstreamer/gst-libav",
-                    "commit": "2a1098380969a52c2a89abfe52f0d034638a4e69"
+                    "type": "archive",
+                    "url": "https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-1.12.4.tar.xz",
+                    "sha256": "2a56aa5d2d8cd912f2bce17f174713d2c417ca298f1f9c28ee66d4aa1e1d9e62"
                 }
             ]
         },
