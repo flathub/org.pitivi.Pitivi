@@ -333,27 +333,31 @@
             "name": "gstreamer",
             "buildsystem": "meson",
             "builddir": true,
-            "config-opts": ["-Ddisable_gtkdoc=true"],
+            "config-opts": [
+                "-Ddisable_gtkdoc=true"
+            ],
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.12.4",
+                    "branch": "1.14.0",
                     "url": "git://anongit.freedesktop.org/gstreamer/gstreamer",
-                    "commit": "505a24ff6843a04e4f75c5e03caa7b2774806fc3"
+                    "commit": "80e0e90d00bb358ca9dc071cf6de010ec5ae2644"
                 }
             ]
         },
         {
             "name": "gst-plugins-base",
             "buildsystem": "meson",
-            "config-opts": ["-Ddisable_gtkdoc=true"],
+            "config-opts": [
+                "-Ddisable_gtkdoc=true"
+            ],
             "builddir": true,
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.12.4",
+                    "branch": "1.14.0",
                     "url": "git://anongit.freedesktop.org/gstreamer/gst-plugins-base",
-                    "commit": "e07c69f65598068b380753066783a1c67e3d4464"
+                    "commit": "46fc41f1a8378639f2982b777035bbcddd4e5000"
                 }
             ]
         },
@@ -365,9 +369,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.12.4",
+                    "branch": "1.14.0",
                     "url": "git://anongit.freedesktop.org/gstreamer/gst-plugins-good",
-                    "commit": "224938300a3b0fd8263422c3548576ac939032e5"
+                    "commit": "6854a23b5497543db3c8c8f26cb9762cc7aa0750"
                 }
             ]
         },
@@ -379,9 +383,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.12.4",
+                    "branch": "1.14.0",
                     "url": "git://anongit.freedesktop.org/gstreamer/gst-plugins-ugly",
-                    "commit": "46fab99f2ef5581d63c2d11c57fb741553ede37f"
+                    "commit": "3d6b928e1754abead08255918f134c16f5a70d30"
                 }
             ],
             "post-install": [
@@ -422,21 +426,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.12.4",
+                    "branch": "1.14.0",
                     "url": "git://anongit.freedesktop.org/gstreamer/gst-plugins-bad",
-                    "commit": "cbdbd8d4f6893e6042dbf7b8258e23a8d2aaf081"
-                },
-                {
-                    "type": "patch",
-                    "path": "bad/0001-compositor-Add-support-for-crossfade-blending.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "bad/0002-meson-fix-gl-check.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "bad/0003-meson-fix-gl-variable-names.patch"
+                    "commit": "48cde372d6f5b9feff464bffb734686e0cbf0ca1"
                 }
             ],
             "post-install": [
@@ -452,8 +444,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-1.12.4.tar.xz",
-                    "sha256": "2a56aa5d2d8cd912f2bce17f174713d2c417ca298f1f9c28ee66d4aa1e1d9e62"
+                    "url": "https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-1.14.0.tar.xz",
+                    "sha256": "fb134b4d3e054746ef8b922ff157b0c7903d1fdd910708a45add66954da7ef89"
                 }
             ]
         },
@@ -465,9 +457,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.12.4",
+                    "branch": "1.14.0",
                     "url": "git://anongit.freedesktop.org/gstreamer/gst-python",
-                    "commit": "d8d6347c7cd62f0a86d1a3f75e1107a44cee6b2a"
+                    "commit": "38d95adb188e1d5261d31db3bc11756af05abab2"
                 }
             ]
         },
@@ -480,9 +472,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.12.4",
+                    "branch": "1.14.0",
                     "url": "git://anongit.freedesktop.org/gstreamer/gst-devtools",
-                    "commit": "5d4f01debcae28d12613b668c65a4263e2d3f42f"
+                    "commit": "207c447a40eef3d438708fc9d838ee6e1a989627"
                 }
             ]
         },
@@ -494,9 +486,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.12.4",
+                    "branch": "1.14.0",
                     "url": "git://anongit.freedesktop.org/gstreamer/gstreamer-vaapi",
-                    "commit": "e540e0899421d580423f41a7bd65307923eb6a26"
+                    "commit": "67ebe1f45a7ded01f27c91a583243770a829b8c9"
                 }
             ]
         },
@@ -508,17 +500,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.12.4",
+                    "branch": "1.14.0",
                     "url": "git://anongit.freedesktop.org/gstreamer/gst-editing-services",
-                    "commit": "f8391172f3419dc8cef69753c30a181b5896e240"
-                },
-                {
-                    "type": "patch",
-                    "path": "ges/0001-video-transition-Make-use-of-the-new-compositor-cros.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "ges/0002-transition-Fix-usage-of-transition-types-crossfade.patch"
+                    "commit": "e6a372e5efe65fd721f8042717bc0eb782028dc0"
                 }
             ]
         },
@@ -530,9 +514,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.12.2",
-                    "commit": "5caeea2b0576a7e5d5463377f4c1e6d2605feab1",
-                    "url": "https://github.com/pitivi/gst-transcoder"
+                    "branch": "1.14.0",
+                    "url": "https://github.com/pitivi/gst-transcoder",
+                    "commit": "3718be544f9446619eefb2c009325bca951329ff"
                 }
             ]
         },
