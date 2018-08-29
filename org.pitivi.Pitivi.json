@@ -1,9 +1,9 @@
 {
-    "app-id": "org.pitivi.Pitivi",
-    "runtime": "org.gnome.Platform",
-    "runtime-version": "3.24",
-    "command": "pitivi",
-    "finish-args": [
+    "app-id" : "org.pitivi.Pitivi",
+    "runtime" : "org.gnome.Platform",
+    "runtime-version" : "3.28",
+    "command" : "pitivi",
+    "finish-args" : [
         "--socket=x11",
         "--share=ipc",
         "--socket=pulseaudio",
@@ -17,21 +17,18 @@
         "--filesystem=host",
         "--device=dri"
     ],
-    "sdk": "org.gnome.Sdk",
-    "rename-appdata-file": "pitivi.appdata.xml",
-    "rename-desktop-file": "pitivi.desktop",
-    "rename-icon": "pitivi",
-    "copy-icon": true,
-    "build-options": {
-        "env": {
-            "PYTHON": "python3",
-            "GST_PLUGIN_SYSTEM_PATH": "/app/lib/gstreamer-1.0/:/app/lib/codecs/lib/gstreamer-1.0/",
-            "FREI0R_PATH": "/app/lib/frei0r-1/"
+    "sdk" : "org.gnome.Sdk",
+    "copy-icon" : true,
+    "build-options" : {
+        "env" : {
+            "GST_PLUGIN_SYSTEM_PATH" : "/app/lib/gstreamer-1.0/:/app/lib/codecs/lib/gstreamer-1.0/",
+            "FREI0R_PATH" : "/app/lib/frei0r-1/",
+            "PYTHON" : "python3"
         },
-        "append-ld-library-path": "/app/lib/codecs/lib",
-        "ldflags": "-L/app/lib/codecs/lib"
+        "append-ld-library-path" : "/app/lib/codecs/lib",
+        "ldflags" : "-L/app/lib/codecs/lib"
     },
-    "cleanup": [
+    "cleanup" : [
         "/include",
         "/lib/*.a",
         "/lib/*.la",
@@ -39,252 +36,252 @@
         "/lib/pkgconfig",
         "/share/man"
     ],
-    "add-extensions": {
-        "org.pitivi.Pitivi.Codecs": {
-            "directory": "lib/codecs",
-            "add-ld-path": "lib",
-            "bundle": true,
-            "autodelete": true
+    "add-extensions" : {
+        "org.pitivi.Pitivi.Codecs" : {
+            "directory" : "lib/codecs",
+            "add-ld-path" : "lib",
+            "bundle" : true,
+            "autodelete" : true
         }
     },
-    "modules": [
+    "modules" : [
         {
-            "name": "numpy",
-            "buildsystem": "simple",
-            "ensure-writable": [
+            "name" : "numpy",
+            "buildsystem" : "simple",
+            "ensure-writable" : [
                 "easy-install.pth"
             ],
-            "build-commands": [
+            "build-commands" : [
                 "mkdir -p /app/lib/python3.5/site-packages",
                 "CFLAGS='-L/usr/lib -Lbuild/temp.linux-x86_64-3.4 -I/usr/include -I/usr/include/python3.5m/' CXX=/usr/bin/g++ CC=/usr/bin/gcc PYTHONUSERBASE=/app/ python3 setup.py install --prefix=/app # Working around linking issues"
             ],
-            "sources": [
+            "sources" : [
                 {
-                    "type": "archive",
-                    "url": "https://pypi.python.org/packages/05/84/0feb999c05f252af50a5fbc463268044feda92cdaad8cb0d0a6073d76057/numpy-1.13.0.zip#md5=fd044f0b8079abeaf5e6d2e93b2c1d03",
-                    "sha256": "dcff367b725586830ff0e20b805c7654c876c2d4585c0834a6049502b9d6cf7e"
+                    "type" : "archive",
+                    "url" : "https://pypi.python.org/packages/05/84/0feb999c05f252af50a5fbc463268044feda92cdaad8cb0d0a6073d76057/numpy-1.13.0.zip#md5=fd044f0b8079abeaf5e6d2e93b2c1d03",
+                    "sha256" : "dcff367b725586830ff0e20b805c7654c876c2d4585c0834a6049502b9d6cf7e"
                 }
             ]
         },
         {
-            "name": "pyparsing",
-            "buildsystem": "simple",
-            "ensure-writable": [
+            "name" : "pyparsing",
+            "buildsystem" : "simple",
+            "ensure-writable" : [
                 "easy-install.pth"
             ],
-            "build-commands": [
+            "build-commands" : [
                 "python3 setup.py install --prefix=/app"
             ],
-            "sources": [
+            "sources" : [
                 {
-                    "type": "archive",
-                    "url": "https://pypi.python.org/packages/3c/ec/a94f8cf7274ea60b5413df054f82a8980523efd712ec55a59e7c3357cf7c/pyparsing-2.2.0.tar.gz#md5=0214e42d63af850256962b6744c948d9",
-                    "sha256": "0832bcf47acd283788593e7a0f542407bd9550a55a8a8435214a1960e04bcb04"
+                    "type" : "archive",
+                    "url" : "https://pypi.python.org/packages/3c/ec/a94f8cf7274ea60b5413df054f82a8980523efd712ec55a59e7c3357cf7c/pyparsing-2.2.0.tar.gz#md5=0214e42d63af850256962b6744c948d9",
+                    "sha256" : "0832bcf47acd283788593e7a0f542407bd9550a55a8a8435214a1960e04bcb04"
                 }
             ]
         },
         {
-            "name": "pytz",
-            "buildsystem": "simple",
-            "ensure-writable": [
+            "name" : "pytz",
+            "buildsystem" : "simple",
+            "ensure-writable" : [
                 "easy-install.pth"
             ],
-            "build-commands": [
+            "build-commands" : [
                 "python3 setup.py install --prefix=/app"
             ],
-            "sources": [
+            "sources" : [
                 {
-                    "type": "archive",
-                    "url": "https://pypi.python.org/packages/a4/09/c47e57fc9c7062b4e83b075d418800d322caa87ec0ac21e6308bd3a2d519/pytz-2017.2.zip#md5=",
-                    "sha256": "f5c056e8f62d45ba8215e5cb8f50dfccb198b4b9fbea8500674f3443e4689589"
+                    "type" : "archive",
+                    "url" : "https://pypi.python.org/packages/a4/09/c47e57fc9c7062b4e83b075d418800d322caa87ec0ac21e6308bd3a2d519/pytz-2017.2.zip#md5=",
+                    "sha256" : "f5c056e8f62d45ba8215e5cb8f50dfccb198b4b9fbea8500674f3443e4689589"
                 }
             ]
         },
         {
-            "name": "six",
-            "buildsystem": "simple",
-            "ensure-writable": [
+            "name" : "six",
+            "buildsystem" : "simple",
+            "ensure-writable" : [
                 "easy-install.pth"
             ],
-            "build-commands": [
+            "build-commands" : [
                 "python3 setup.py install --prefix=/app"
             ],
-            "sources": [
+            "sources" : [
                 {
-                    "type": "archive",
-                    "url": "https://pypi.python.org/packages/b3/b2/238e2590826bfdd113244a40d9d3eb26918bd798fc187e2360a8367068db/six-1.10.0.tar.gz#md5=34eed507548117b2ab523ab14b2f8b55",
-                    "sha256": "105f8d68616f8248e24bf0e9372ef04d3cc10104f1980f54d57b2ce73a5ad56a"
+                    "type" : "archive",
+                    "url" : "https://pypi.python.org/packages/b3/b2/238e2590826bfdd113244a40d9d3eb26918bd798fc187e2360a8367068db/six-1.10.0.tar.gz#md5=34eed507548117b2ab523ab14b2f8b55",
+                    "sha256" : "105f8d68616f8248e24bf0e9372ef04d3cc10104f1980f54d57b2ce73a5ad56a"
                 }
             ]
         },
         {
-            "name": "Cycler",
-            "buildsystem": "simple",
-            "ensure-writable": [
+            "name" : "Cycler",
+            "buildsystem" : "simple",
+            "ensure-writable" : [
                 "easy-install.pth"
             ],
-            "build-commands": [
+            "build-commands" : [
                 "python3 setup.py install --prefix=/app"
             ],
-            "sources": [
+            "sources" : [
                 {
-                    "type": "archive",
-                    "url": "https://pypi.python.org/packages/c2/4b/137dea450d6e1e3d474e1d873cd1d4f7d3beed7e0dc973b06e8e10d32488/cycler-0.10.0.tar.gz#md5=4cb42917ac5007d1cdff6cccfe2d016b",
-                    "sha256": "cd7b2d1018258d7247a71425e9f26463dfb444d411c39569972f4ce586b0c9d8"
+                    "type" : "archive",
+                    "url" : "https://pypi.python.org/packages/c2/4b/137dea450d6e1e3d474e1d873cd1d4f7d3beed7e0dc973b06e8e10d32488/cycler-0.10.0.tar.gz#md5=4cb42917ac5007d1cdff6cccfe2d016b",
+                    "sha256" : "cd7b2d1018258d7247a71425e9f26463dfb444d411c39569972f4ce586b0c9d8"
                 }
             ]
         },
         {
-            "name": "python-dateutil",
-            "buildsystem": "simple",
-            "ensure-writable": [
+            "name" : "python-dateutil",
+            "buildsystem" : "simple",
+            "ensure-writable" : [
                 "easy-install.pth"
             ],
-            "build-commands": [
+            "build-commands" : [
                 "python3 setup.py install --prefix=/app"
             ],
-            "sources": [
+            "sources" : [
                 {
-                    "type": "archive",
-                    "url": "https://pypi.python.org/packages/51/fc/39a3fbde6864942e8bb24c93663734b74e281b984d1b8c4f95d64b0c21f6/python-dateutil-2.6.0.tar.gz#md5=6e38f91e8c94c15a79ce22768dfeca87",
-                    "sha256": "62a2f8df3d66f878373fd0072eacf4ee52194ba302e00082828e0d263b0418d2"
+                    "type" : "archive",
+                    "url" : "https://pypi.python.org/packages/51/fc/39a3fbde6864942e8bb24c93663734b74e281b984d1b8c4f95d64b0c21f6/python-dateutil-2.6.0.tar.gz#md5=6e38f91e8c94c15a79ce22768dfeca87",
+                    "sha256" : "62a2f8df3d66f878373fd0072eacf4ee52194ba302e00082828e0d263b0418d2"
                 }
             ]
         },
         {
-            "name": "matplotlib",
-            "buildsystem": "simple",
-            "ensure-writable": [
+            "name" : "matplotlib",
+            "buildsystem" : "simple",
+            "ensure-writable" : [
                 "easy-install.pth"
             ],
-            "build-commands": [
+            "build-commands" : [
                 "CXX=/usr/bin/g++ CC=/usr/bin/gcc PYTHONUSERBASE=/app/ python3 setup.py install --prefix=/app"
             ],
-            "sources": [
+            "sources" : [
                 {
-                    "type": "archive",
-                    "url": "https://pypi.python.org/packages/f5/f0/9da3ef24ea7eb0ccd12430a261b66eca36b924aeef06e17147f9f9d7d310/matplotlib-2.0.2.tar.gz",
-                    "sha256": "0ffbc44faa34a8b1704bc108c451ecf87988f900ef7ce757b8e2e84383121ff1"
+                    "type" : "archive",
+                    "url" : "https://pypi.python.org/packages/f5/f0/9da3ef24ea7eb0ccd12430a261b66eca36b924aeef06e17147f9f9d7d310/matplotlib-2.0.2.tar.gz",
+                    "sha256" : "0ffbc44faa34a8b1704bc108c451ecf87988f900ef7ce757b8e2e84383121ff1"
                 },
                 {
-                    "type": "patch",
-                    "path": "matplotlib/gtk3agg_check_no-multiprocessing.patch"
+                    "type" : "patch",
+                    "path" : "matplotlib/gtk3agg_check_no-multiprocessing.patch"
                 },
                 {
-                    "type": "patch",
-                    "path": "matplotlib/gtk3cairo_check_no-multiprocessing.patch"
+                    "type" : "patch",
+                    "path" : "matplotlib/gtk3cairo_check_no-multiprocessing.patch"
                 },
                 {
-                    "type": "file",
-                    "path": "matplotlib/setup.cfg"
+                    "type" : "file",
+                    "path" : "matplotlib/setup.cfg"
                 }
             ]
         },
         {
-            "name": "gsound",
-            "sources": [
+            "name" : "gsound",
+            "sources" : [
                 {
-                    "type": "git",
-                    "url": "https://git.gnome.org/browse/gsound",
-                    "branch": "1.0.2",
-                    "commit": "a86946b494aa32782b3f6334344d07b5c11d5219"
+                    "type" : "git",
+                    "url" : "https://git.gnome.org/browse/gsound",
+                    "branch" : "1.0.2",
+                    "commit" : "a86946b494aa32782b3f6334344d07b5c11d5219"
                 }
             ]
         },
         {
-            "name": "x264",
-            "config-opts": [
+            "name" : "x264",
+            "config-opts" : [
                 "--enable-shared",
                 "--enable-static",
                 "--enable-pic",
                 "--disable-lavf"
             ],
-            "sources": [
+            "sources" : [
                 {
-                    "type": "archive",
-                    "url": "http://download.videolan.org/pub/x264/snapshots/x264-snapshot-20140212-2245-stable.tar.bz2",
-                    "sha256": "5d98e9e4faf6dd55e7193ed379aff477b8acbda6777758956ef7e5f05067be18"
+                    "type" : "archive",
+                    "url" : "http://download.videolan.org/pub/x264/snapshots/x264-snapshot-20140212-2245-stable.tar.bz2",
+                    "sha256" : "5d98e9e4faf6dd55e7193ed379aff477b8acbda6777758956ef7e5f05067be18"
                 }
             ],
-            "post-install": [
+            "post-install" : [
                 "mkdir -p /app/lib/codecs/lib",
                 "mv /app/lib/libx264.so* /app/lib/codecs/lib"
             ]
         },
         {
-            "name": "libopus",
-            "sources": [
+            "name" : "libopus",
+            "sources" : [
                 {
-                    "type": "archive",
-                    "url": "http://downloads.xiph.org/releases/opus/opus-1.1.2.tar.gz",
-                    "sha256": "0e290078e31211baa7b5886bcc8ab6bc048b9fc83882532da4a1a45e58e907fd"
+                    "type" : "archive",
+                    "url" : "http://downloads.xiph.org/releases/opus/opus-1.1.2.tar.gz",
+                    "sha256" : "0e290078e31211baa7b5886bcc8ab6bc048b9fc83882532da4a1a45e58e907fd"
                 }
             ]
         },
         {
-            "name": "frei0r-plugin",
-            "sources": [
+            "name" : "frei0r-plugin",
+            "sources" : [
                 {
-                    "type": "archive",
-                    "url": "https://files.dyne.org/frei0r/releases/frei0r-plugins-1.4.tar.gz",
-                    "sha256": "8470fcabde9f341b729be3be16385ffc8383d6f3328213907a43851b6e83be57"
+                    "type" : "archive",
+                    "url" : "https://files.dyne.org/frei0r/releases/frei0r-plugins-1.4.tar.gz",
+                    "sha256" : "8470fcabde9f341b729be3be16385ffc8383d6f3328213907a43851b6e83be57"
                 }
             ]
         },
         {
-            "name": "libsoundtouch",
-            "sources": [
+            "name" : "libsoundtouch",
+            "sources" : [
                 {
-                    "type": "archive",
-                    "url": "http://www.surina.net/soundtouch/soundtouch-1.8.0.tar.gz",
-                    "sha256": "3d4161d74ca25c5a98c69dbb8ea10fd2be409ba1a3a0bf81db407c4c261f166b"
+                    "type" : "archive",
+                    "url" : "http://www.surina.net/soundtouch/soundtouch-1.8.0.tar.gz",
+                    "sha256" : "3d4161d74ca25c5a98c69dbb8ea10fd2be409ba1a3a0bf81db407c4c261f166b"
                 }
             ]
         },
         "shared-modules/lame/lame-3.99.5.json",
         {
-            "name": "vo-aacenc",
-            "sources": [
+            "name" : "vo-aacenc",
+            "sources" : [
                 {
-                    "type": "archive",
-                    "url": "http://downloads.sourceforge.net/project/opencore-amr/vo-aacenc/vo-aacenc-0.1.3.tar.gz",
-                    "sha256": "e51a7477a359f18df7c4f82d195dab4e14e7414cbd48cf79cc195fc446850f36"
+                    "type" : "archive",
+                    "url" : "http://downloads.sourceforge.net/project/opencore-amr/vo-aacenc/vo-aacenc-0.1.3.tar.gz",
+                    "sha256" : "e51a7477a359f18df7c4f82d195dab4e14e7414cbd48cf79cc195fc446850f36"
                 }
             ],
-            "post-install": [
+            "post-install" : [
                 "mkdir -p /app/lib/codecs/lib",
                 "mv /app/lib/libvo-aacenc.so* /app/lib/codecs/lib"
             ]
         },
         {
-            "name": "x265",
-            "buildsystem": "cmake",
-            "build-options": {
-                "arch": {
-                    "arm": {
-                        "cxxflags": "-fPIC"
+            "name" : "x265",
+            "buildsystem" : "cmake",
+            "build-options" : {
+                "arch" : {
+                    "arm" : {
+                        "cxxflags" : "-fPIC"
                     },
-                    "aarch64": {
-                        "cxxflags": "-fPIC"
+                    "aarch64" : {
+                        "cxxflags" : "-fPIC"
                     }
                 }
             },
-            "subdir": "source",
-            "sources": [
+            "subdir" : "source",
+            "sources" : [
                 {
-                    "type": "archive",
-                    "url": "https://bitbucket.org/multicoreware/x265/downloads/x265_1.9.tar.gz",
-                    "sha256": "3e4654133ed957a98708fdb4cb9a154d9e80922b84e26e43fc462a101c5b15c8"
+                    "type" : "archive",
+                    "url" : "https://bitbucket.org/multicoreware/x265/downloads/x265_1.9.tar.gz",
+                    "sha256" : "3e4654133ed957a98708fdb4cb9a154d9e80922b84e26e43fc462a101c5b15c8"
                 }
             ],
-            "post-install": [
+            "post-install" : [
                 "mkdir -p /app/lib/codecs/lib",
                 "mv /app/lib/libx265.so* /app/lib/codecs/lib"
             ]
         },
         {
-            "name": "ffmpeg",
-            "config-opts": [
+            "name" : "ffmpeg",
+            "config-opts" : [
                 "--disable-static",
                 "--disable-avdevice",
                 "--disable-postproc",
@@ -325,259 +322,255 @@
                 "--enable-gpl",
                 "--enable-shared"
             ],
-            "sources": [
+            "sources" : [
                 {
-                    "type": "git",
-                    "url": "https://github.com/FFmpeg/FFmpeg",
-                    "branch": "670d3189e9ef674e4167cec3145ea4c4c172d581"
+                    "type" : "git",
+                    "url" : "https://github.com/FFmpeg/FFmpeg",
+                    "branch" : "670d3189e9ef674e4167cec3145ea4c4c172d581"
                 }
             ],
-            "post-install": [
+            "post-install" : [
                 "mkdir -p /app/lib/codecs/lib",
                 "mv /app/lib/libav*.so* /app/lib/libswresample.so* /app/lib/codecs/lib"
             ]
         },
         {
-            "name": "fdkaac",
-            "config-opts": [
+            "name" : "fdkaac",
+            "config-opts" : [
                 "--disable-static"
             ],
-            "sources": [
+            "sources" : [
                 {
-                    "type": "git",
-                    "url": "https://github.com/mstorsjo/fdk-aac.git",
-                    "branch": "v0.1.5",
-                    "commit": "74c1a2a4f831285cbd93ec1427f1670d3c5c5e52"
+                    "type" : "git",
+                    "url" : "https://github.com/mstorsjo/fdk-aac.git",
+                    "branch" : "v0.1.5",
+                    "commit" : "74c1a2a4f831285cbd93ec1427f1670d3c5c5e52"
                 }
             ],
-            "post-install": [
+            "post-install" : [
                 "mkdir -p /app/lib/codecs/lib",
                 "mv /app/lib/libfdk-aac.so* /app/lib/codecs/lib"
             ]
         },
         {
-            "name": "gstreamer",
-            "buildsystem": "meson",
-            "builddir": true,
-            "config-opts": [
+            "name" : "gstreamer",
+            "buildsystem" : "meson",
+            "builddir" : true,
+            "config-opts" : [
                 "-Ddisable_gtkdoc=true"
             ],
-            "sources": [
+            "sources" : [
                 {
-                    "type": "git",
-                    "branch": "1.14.0",
-                    "url": "git://anongit.freedesktop.org/gstreamer/gstreamer",
-                    "commit": "80e0e90d00bb358ca9dc071cf6de010ec5ae2644"
+                    "type" : "git",
+                    "branch" : "1.14.2",
+                    "url" : "git://anongit.freedesktop.org/gstreamer/gstreamer",
+                    "commit" : "afb3d1b3e0d02da8b0eb5bb501356650b38e5644"
                 }
             ]
         },
         {
-            "name": "gst-plugins-base",
-            "buildsystem": "meson",
-            "config-opts": [
+            "name" : "gst-plugins-base",
+            "buildsystem" : "meson",
+            "config-opts" : [
                 "-Ddisable_gtkdoc=true"
             ],
-            "builddir": true,
-            "sources": [
+            "builddir" : true,
+            "sources" : [
                 {
-                    "type": "git",
-                    "branch": "1.14.0",
-                    "url": "git://anongit.freedesktop.org/gstreamer/gst-plugins-base",
-                    "commit": "46fc41f1a8378639f2982b777035bbcddd4e5000"
+                    "type" : "git",
+                    "branch" : "1.14.2",
+                    "url" : "git://anongit.freedesktop.org/gstreamer/gst-plugins-base",
+                    "commit" : "24f097564657bd630e68931c932ec9fd992a3785"
                 }
             ]
         },
         {
-            "name": "gst-plugins-good",
-            "buildsystem": "meson",
-            "builddir": true,
-            "config-opts": [
+            "name" : "gst-plugins-good",
+            "buildsystem" : "meson",
+            "builddir" : true,
+            "config-opts" : [
                 "-Ddisable_gtkdoc=true"
             ],
-            "sources": [
+            "sources" : [
                 {
-                    "type": "git",
-                    "branch": "1.14.0",
-                    "url": "git://anongit.freedesktop.org/gstreamer/gst-plugins-good",
-                    "commit": "6854a23b5497543db3c8c8f26cb9762cc7aa0750"
+                    "type" : "git",
+                    "branch" : "1.14.2",
+                    "url" : "git://anongit.freedesktop.org/gstreamer/gst-plugins-good",
+                    "commit" : "4733e9715675d2dc52ed00e58d52388c56411cd2"
                 }
             ]
         },
         {
-            "name": "gst-plugins-ugly",
-            "buildsystem": "meson",
-            "builddir": true,
-            "config-opts": [
+            "name" : "gst-plugins-ugly",
+            "buildsystem" : "meson",
+            "builddir" : true,
+            "config-opts" : [
                 "-Ddisable_gtkdoc=true"
             ],
-            "sources": [
+            "sources" : [
                 {
-                    "type": "git",
-                    "branch": "1.14.0",
-                    "url": "git://anongit.freedesktop.org/gstreamer/gst-plugins-ugly",
-                    "commit": "3d6b928e1754abead08255918f134c16f5a70d30"
+                    "type" : "git",
+                    "branch" : "1.14.2",
+                    "url" : "git://anongit.freedesktop.org/gstreamer/gst-plugins-ugly",
+                    "commit" : "df1bcfa0ba57859eb39610ef53f1eb744ca57465"
                 }
             ],
-            "post-install": [
+            "post-install" : [
                 "mkdir -p /app/lib/codecs/lib/gstreamer-1.0",
                 "mv /app/lib/gstreamer-1.0/libgstx264.so /app/lib/codecs/lib/gstreamer-1.0"
             ]
         },
         {
-            "name": "gavl",
-            "rm-configure": true,
-            "config-opts": [
+            "name" : "gavl",
+            "rm-configure" : true,
+            "config-opts" : [
                 "--without-doxygen"
             ],
-            "sources": [
+            "sources" : [
                 {
-                    "type": "archive",
-                    "url": "https://sourceforge.net/projects/gmerlin/files/gavl/1.4.0/gavl-1.4.0.tar.gz",
-                    "sha256": "51aaac41391a915bd9bad07710957424b046410a276e7deaff24a870929d33ce"
+                    "type" : "archive",
+                    "url" : "https://sourceforge.net/projects/gmerlin/files/gavl/1.4.0/gavl-1.4.0.tar.gz",
+                    "sha256" : "51aaac41391a915bd9bad07710957424b046410a276e7deaff24a870929d33ce"
                 },
                 {
-                    "type": "patch",
-                    "path": "gavl/ubuntu_armel_ftbfs.patch"
+                    "type" : "patch",
+                    "path" : "gavl/ubuntu_armel_ftbfs.patch"
                 },
                 {
-                    "type": "script",
-                    "dest-filename": "autogen.sh",
-                    "commands": [
+                    "type" : "script",
+                    "dest-filename" : "autogen.sh",
+                    "commands" : [
                         "autoreconf -vfi"
                     ]
                 }
             ]
         },
         {
-            "name": "gst-plugins-bad",
-            "buildsystem": "meson",
-            "builddir": true,
-            "config-opts": [
+            "name" : "gst-plugins-bad",
+            "buildsystem" : "meson",
+            "builddir" : true,
+            "config-opts" : [
                 "-Ddisable_gtkdoc=true"
             ],
-            "sources": [
+            "sources" : [
                 {
-                    "type": "git",
-                    "branch": "1.14.0",
-                    "url": "git://anongit.freedesktop.org/gstreamer/gst-plugins-bad",
-                    "commit": "48cde372d6f5b9feff464bffb734686e0cbf0ca1"
+                    "type" : "git",
+                    "branch" : "1.14.2",
+                    "url" : "git://anongit.freedesktop.org/gstreamer/gst-plugins-bad",
+                    "commit" : "513ef5efdf85f9af4a016e8ae69f28cf16c9ec58"
                 }
             ],
-            "post-install": [
+            "post-install" : [
                 "mkdir -p /app/lib/codecs/lib/gstreamer-1.0",
                 "mv /app/lib/gstreamer-1.0/libgst{fdkaac,voaacenc,x265}.so /app/lib/codecs/lib/gstreamer-1.0"
             ]
         },
         {
-            "name": "gst-libav",
-            "buildsystem": "meson",
-            "builddir": true,
-            "config-opts": [
+            "name" : "gst-libav",
+            "buildsystem" : "meson",
+            "builddir" : true,
+            "config-opts" : [
                 "-Ddisable_gtkdoc=true"
             ],
-            "sources": [
+            "sources" : [
                 {
-                    "type": "archive",
-                    "url": "https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-1.14.0.tar.xz",
-                    "sha256": "fb134b4d3e054746ef8b922ff157b0c7903d1fdd910708a45add66954da7ef89"
+                    "type" : "archive",
+                    "url" : "https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-1.14.2.tar.xz",
+                    "sha256" : "8a351c39c5cfc2bbd31ca434ec4a290a730a26efbdea962fdd8306dce5c576de"
                 }
             ]
         },
         {
-            "name": "gst-python",
-            "buildsystem": "meson",
-            "builddir": true,
-            "config-opts": [
+            "name" : "gst-python",
+            "buildsystem" : "meson",
+            "builddir" : true,
+            "config-opts" : [
                 "-Dpygi-overrides-dir=/app/lib/python3.5/site-packages/gi/overrides/"
             ],
-            "sources": [
+            "sources" : [
                 {
-                    "type": "git",
-                    "branch": "1.14.0",
-                    "url": "git://anongit.freedesktop.org/gstreamer/gst-python",
-                    "commit": "38d95adb188e1d5261d31db3bc11756af05abab2"
+                    "type" : "git",
+                    "branch" : "1.14.2",
+                    "url" : "git://anongit.freedesktop.org/gstreamer/gst-python",
+                    "commit" : "75ac38f1282a18a5659bee487b58e3bac1a128c9"
                 }
             ]
         },
         {
-            "name": "gst-devtools",
-            "config-opts": [
+            "name" : "gst-devtools",
+            "config-opts" : [
                 "-Ddisable_gtkdoc=true"
             ],
-            "buildsystem": "meson",
-            "builddir": true,
-            "sources": [
+            "buildsystem" : "meson",
+            "builddir" : true,
+            "sources" : [
                 {
-                    "type": "git",
-                    "branch": "1.14.0",
-                    "url": "git://anongit.freedesktop.org/gstreamer/gst-devtools",
-                    "commit": "207c447a40eef3d438708fc9d838ee6e1a989627"
+                    "type" : "git",
+                    "branch" : "1.14.2",
+                    "url" : "git://anongit.freedesktop.org/gstreamer/gst-devtools",
+                    "commit" : "10586b5a26f3f63d56f31cbdab70e8ac68022303"
                 }
             ]
         },
         {
-            "name": "gstreamer-vaapi",
-            "buildsystem": "meson",
-            "builddir": true,
-            "config-opts": [
+            "name" : "gstreamer-vaapi",
+            "buildsystem" : "meson",
+            "builddir" : true,
+            "config-opts" : [
                 "-Ddisable_gtkdoc=true"
             ],
-            "sources": [
+            "sources" : [
                 {
-                    "type": "git",
-                    "branch": "1.14.0",
-                    "url": "git://anongit.freedesktop.org/gstreamer/gstreamer-vaapi",
-                    "commit": "67ebe1f45a7ded01f27c91a583243770a829b8c9"
+                    "type" : "git",
+                    "branch" : "1.14.2",
+                    "url" : "git://anongit.freedesktop.org/gstreamer/gstreamer-vaapi",
+                    "commit" : "bc395f954d1ac7c6b4009930422636f04f0781ad"
                 }
             ]
         },
         {
-            "name": "gst-editing-services",
-            "buildsystem": "meson",
-            "builddir": true,
-            "config-opts": [
+            "name" : "gst-editing-services",
+            "buildsystem" : "meson",
+            "builddir" : true,
+            "config-opts" : [
                 "-Ddisable_gtkdoc=true"
             ],
-            "sources": [
+            "sources" : [
                 {
-                    "type": "git",
-                    "branch": "1.14.0",
-                    "url": "git://anongit.freedesktop.org/gstreamer/gst-editing-services",
-                    "commit": "e6a372e5efe65fd721f8042717bc0eb782028dc0"
+                    "type" : "git",
+                    "branch" : "1.14.2",
+                    "url" : "git://anongit.freedesktop.org/gstreamer/gst-editing-services",
+                    "commit" : "143f9d546ede487042b73e6c4801a80b5bb61abe"
                 }
             ]
         },
         {
-            "name": "gst-transcoder",
-            "buildsystem": "meson",
-            "builddir": true,
-            "config-opts": [
+            "name" : "gst-transcoder",
+            "buildsystem" : "meson",
+            "builddir" : true,
+            "config-opts" : [
                 "-Ddisable_doc=true"
             ],
-            "sources": [
+            "sources" : [
                 {
-                    "type": "git",
-                    "branch": "1.14.0",
-                    "url": "https://github.com/pitivi/gst-transcoder",
-                    "commit": "3718be544f9446619eefb2c009325bca951329ff"
+                    "type" : "git",
+                    "branch" : "1.14.1",
+                    "url" : "https://github.com/pitivi/gst-transcoder",
+                    "commit" : "65f481dc2bab9358481918363bab9bb17afd7232"
                 }
             ]
         },
         {
-            "name": "pitivi",
-            "buildsystem": "meson",
-            "builddir": true,
-            "sources": [
+            "name" : "pitivi",
+            "buildsystem" : "meson",
+            "builddir" : true,
+            "sources" : [
                 {
-                    "type": "git",
-                    "url": "https://git.gnome.org/browse/pitivi",
-                    "branch": "0.99.0",
-                    "commit": "f48f3a6dc51bcdf18c63c805e86af632d77e7e13"
-                },
-                {
-                    "type": "patch",
-                    "path": "ptv/0001-application-Fix-dbus-app_id-to-match-flatpak-expecta.patch"
-                }
+                    "type" : "git",
+                    "url" : "https://git.gnome.org/browse/pitivi",
+                    "branch" : "0.999.0",
+                    "commit" : "7258d43719eabdd0e729412e3277e03400961bf5"
+		}
             ]
         }
     ]
