@@ -326,7 +326,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/FFmpeg/FFmpeg",
-                    "branch" : "670d3189e9ef674e4167cec3145ea4c4c172d581"
+                    "branch": "6d7192bcb7bbab17dc194e8dbb56c208bced0a92"
                 }
             ],
             "post-install" : [
