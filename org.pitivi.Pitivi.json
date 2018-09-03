@@ -182,7 +182,7 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://git.gnome.org/browse/gsound",
+                    "url" : "https://gitlab.gnome.org/GNOME/gsound.git/",
                     "branch" : "1.0.2",
                     "commit" : "a86946b494aa32782b3f6334344d07b5c11d5219"
                 }
@@ -579,7 +579,7 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://git.gnome.org/browse/pitivi",
+                    "url" : "https://gitlab.gnome.org/GNOME/pitivi.git/",
                     "branch" : "0.999.0",
                     "commit" : "7258d43719eabdd0e729412e3277e03400961bf5"
 		}
