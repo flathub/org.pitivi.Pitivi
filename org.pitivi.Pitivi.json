@@ -1,7 +1,7 @@
 {
     "app-id" : "org.pitivi.Pitivi",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "3.28",
+    "runtime-version" : "3.36",
     "command" : "pitivi",
     "finish-args" : [
         "--socket=x11",
@@ -46,138 +46,7 @@
         }
     },
     "modules" : [
-        {
-            "name" : "numpy",
-            "buildsystem" : "simple",
-            "ensure-writable" : [
-                "easy-install.pth"
-            ],
-            "build-commands" : [
-                "mkdir -p /app/lib/python3.5/site-packages",
-                "CFLAGS='-L/usr/lib -Lbuild/temp.linux-x86_64-3.4 -I/usr/include -I/usr/include/python3.5m/' CXX=/usr/bin/g++ CC=/usr/bin/gcc PYTHONUSERBASE=/app/ python3 setup.py install --prefix=/app # Working around linking issues"
-            ],
-            "sources" : [
-                {
-                    "type" : "archive",
-                    "url": "https://files.pythonhosted.org/packages/d5/6e/f00492653d0fdf6497a181a1c1d46bbea5a2383e7faf4c8ca6d6f3d2581d/numpy-1.14.5.zip",
-                    "sha256": "a4a433b3a264dbc9aa9c7c241e87c0358a503ea6394f8737df1683c7c9a102ac"
-                }
-            ]
-        },
-        {
-            "name" : "pyparsing",
-            "buildsystem" : "simple",
-            "ensure-writable" : [
-                "easy-install.pth"
-            ],
-            "build-commands" : [
-                "python3 setup.py install --prefix=/app"
-            ],
-            "sources" : [
-                {
-                    "type" : "archive",
-                    "url" : "https://pypi.python.org/packages/3c/ec/a94f8cf7274ea60b5413df054f82a8980523efd712ec55a59e7c3357cf7c/pyparsing-2.2.0.tar.gz#md5=0214e42d63af850256962b6744c948d9",
-                    "sha256" : "0832bcf47acd283788593e7a0f542407bd9550a55a8a8435214a1960e04bcb04"
-                }
-            ]
-        },
-        {
-            "name" : "pytz",
-            "buildsystem" : "simple",
-            "ensure-writable" : [
-                "easy-install.pth"
-            ],
-            "build-commands" : [
-                "python3 setup.py install --prefix=/app"
-            ],
-            "sources" : [
-                {
-                    "type" : "archive",
-                    "url" : "https://pypi.python.org/packages/a4/09/c47e57fc9c7062b4e83b075d418800d322caa87ec0ac21e6308bd3a2d519/pytz-2017.2.zip#md5=",
-                    "sha256" : "f5c056e8f62d45ba8215e5cb8f50dfccb198b4b9fbea8500674f3443e4689589"
-                }
-            ]
-        },
-        {
-            "name" : "six",
-            "buildsystem" : "simple",
-            "ensure-writable" : [
-                "easy-install.pth"
-            ],
-            "build-commands" : [
-                "python3 setup.py install --prefix=/app"
-            ],
-            "sources" : [
-                {
-                    "type" : "archive",
-                    "url" : "https://pypi.python.org/packages/b3/b2/238e2590826bfdd113244a40d9d3eb26918bd798fc187e2360a8367068db/six-1.10.0.tar.gz#md5=34eed507548117b2ab523ab14b2f8b55",
-                    "sha256" : "105f8d68616f8248e24bf0e9372ef04d3cc10104f1980f54d57b2ce73a5ad56a"
-                }
-            ]
-        },
-        {
-            "name" : "Cycler",
-            "buildsystem" : "simple",
-            "ensure-writable" : [
-                "easy-install.pth"
-            ],
-            "build-commands" : [
-                "python3 setup.py install --prefix=/app"
-            ],
-            "sources" : [
-                {
-                    "type" : "archive",
-                    "url" : "https://pypi.python.org/packages/c2/4b/137dea450d6e1e3d474e1d873cd1d4f7d3beed7e0dc973b06e8e10d32488/cycler-0.10.0.tar.gz#md5=4cb42917ac5007d1cdff6cccfe2d016b",
-                    "sha256" : "cd7b2d1018258d7247a71425e9f26463dfb444d411c39569972f4ce586b0c9d8"
-                }
-            ]
-        },
-        {
-            "name" : "python-dateutil",
-            "buildsystem" : "simple",
-            "ensure-writable" : [
-                "easy-install.pth"
-            ],
-            "build-commands" : [
-                "python3 setup.py install --prefix=/app"
-            ],
-            "sources" : [
-                {
-                    "type" : "archive",
-                    "url" : "https://pypi.python.org/packages/51/fc/39a3fbde6864942e8bb24c93663734b74e281b984d1b8c4f95d64b0c21f6/python-dateutil-2.6.0.tar.gz#md5=6e38f91e8c94c15a79ce22768dfeca87",
-                    "sha256" : "62a2f8df3d66f878373fd0072eacf4ee52194ba302e00082828e0d263b0418d2"
-                }
-            ]
-        },
-        {
-            "name" : "matplotlib",
-            "buildsystem" : "simple",
-            "ensure-writable" : [
-                "easy-install.pth"
-            ],
-            "build-commands" : [
-                "CXX=/usr/bin/g++ CC=/usr/bin/gcc PYTHONUSERBASE=/app/ python3 setup.py install --prefix=/app"
-            ],
-            "sources" : [
-                {
-                    "type" : "archive",
-                    "url" : "https://pypi.python.org/packages/f5/f0/9da3ef24ea7eb0ccd12430a261b66eca36b924aeef06e17147f9f9d7d310/matplotlib-2.0.2.tar.gz",
-                    "sha256" : "0ffbc44faa34a8b1704bc108c451ecf87988f900ef7ce757b8e2e84383121ff1"
-                },
-                {
-                    "type" : "patch",
-                    "path" : "matplotlib/gtk3agg_check_no-multiprocessing.patch"
-                },
-                {
-                    "type" : "patch",
-                    "path" : "matplotlib/gtk3cairo_check_no-multiprocessing.patch"
-                },
-                {
-                    "type" : "file",
-                    "path" : "matplotlib/setup.cfg"
-                }
-            ]
-        },
+        "python3-matplotlib.json",
         {
             "name" : "gsound",
             "sources" : [
@@ -190,247 +59,29 @@
             ]
         },
         {
-            "name" : "x264",
-            "config-opts" : [
+            "name": "x264",
+            "config-opts": [
                 "--enable-shared",
                 "--enable-static",
                 "--enable-pic",
                 "--disable-lavf"
             ],
-            "sources" : [
+            "sources": [
                 {
-                    "type" : "archive",
-                    "url" : "http://download.videolan.org/pub/x264/snapshots/x264-snapshot-20140212-2245-stable.tar.bz2",
-                    "sha256" : "5d98e9e4faf6dd55e7193ed379aff477b8acbda6777758956ef7e5f05067be18"
+                    "type": "archive",
+                    "url": "http://download.videolan.org/pub/x264/snapshots/x264-snapshot-20191103-2245-stable.tar.bz2",
+                    "sha256": "d74f8f819104a94b0bd075aae39652b1957bcdd460e09b5202582c86e95a5bc0"
                 }
-            ],
-            "post-install" : [
-                "mkdir -p /app/lib/codecs/lib",
-                "mv /app/lib/libx264.so* /app/lib/codecs/lib"
             ]
         },
         {
             "name" : "libopus",
             "sources" : [
-                {
-                    "type" : "archive",
-                    "url" : "http://downloads.xiph.org/releases/opus/opus-1.1.2.tar.gz",
-                    "sha256" : "0e290078e31211baa7b5886bcc8ab6bc048b9fc83882532da4a1a45e58e907fd"
+               {
+                    "type": "archive",
+                    "url": "https://ftp.osuosl.org/pub/xiph/releases/opus/opus-1.3.1.tar.gz",
+                    "sha256": "65b58e1e25b2a114157014736a3d9dfeaad8d41be1c8179866f144a2fb44ff9d"
                 }
-            ]
-        },
-        {
-            "name" : "frei0r-plugin",
-            "sources" : [
-                {
-                    "type" : "archive",
-                    "url" : "https://files.dyne.org/frei0r/releases/frei0r-plugins-1.4.tar.gz",
-                    "sha256" : "8470fcabde9f341b729be3be16385ffc8383d6f3328213907a43851b6e83be57"
-                }
-            ]
-        },
-        {
-            "name" : "libsoundtouch",
-            "sources" : [
-                {
-                    "type" : "archive",
-                    "url" : "http://www.surina.net/soundtouch/soundtouch-1.8.0.tar.gz",
-                    "sha256" : "3d4161d74ca25c5a98c69dbb8ea10fd2be409ba1a3a0bf81db407c4c261f166b"
-                }
-            ]
-        },
-        "shared-modules/lame/lame-3.99.5.json",
-        {
-            "name" : "vo-aacenc",
-            "sources" : [
-                {
-                    "type" : "archive",
-                    "url" : "http://downloads.sourceforge.net/project/opencore-amr/vo-aacenc/vo-aacenc-0.1.3.tar.gz",
-                    "sha256" : "e51a7477a359f18df7c4f82d195dab4e14e7414cbd48cf79cc195fc446850f36"
-                }
-            ],
-            "post-install" : [
-                "mkdir -p /app/lib/codecs/lib",
-                "mv /app/lib/libvo-aacenc.so* /app/lib/codecs/lib"
-            ]
-        },
-        {
-            "name" : "x265",
-            "buildsystem" : "cmake",
-            "build-options" : {
-                "arch" : {
-                    "arm" : {
-                        "cxxflags" : "-fPIC"
-                    },
-                    "aarch64" : {
-                        "cxxflags" : "-fPIC"
-                    }
-                }
-            },
-            "subdir" : "source",
-            "sources" : [
-                {
-                    "type" : "archive",
-                    "url" : "https://bitbucket.org/multicoreware/x265/downloads/x265_1.9.tar.gz",
-                    "sha256" : "3e4654133ed957a98708fdb4cb9a154d9e80922b84e26e43fc462a101c5b15c8"
-                }
-            ],
-            "post-install" : [
-                "mkdir -p /app/lib/codecs/lib",
-                "mv /app/lib/libx265.so* /app/lib/codecs/lib"
-            ]
-        },
-        {
-            "name" : "ffmpeg",
-            "config-opts" : [
-                "--disable-static",
-                "--disable-avdevice",
-                "--disable-postproc",
-                "--disable-swscale",
-                "--disable-programs",
-                "--disable-ffserver",
-                "--disable-ffplay",
-                "--disable-ffprobe",
-                "--disable-ffmpeg",
-                "--disable-encoder=flac",
-                "--disable-protocols",
-                "--disable-devices",
-                "--disable-network",
-                "--disable-hwaccels",
-                "--disable-dxva2",
-                "--disable-vdpau",
-                "--disable-filters",
-                "--disable-doc",
-                "--disable-vda",
-                "--disable-d3d11va",
-                "--disable-dxva2",
-                "--disable-audiotoolbox",
-                "--disable-videotoolbox",
-                "--disable-vaapi",
-                "--disable-crystalhd",
-                "--disable-mediacodec",
-                "--disable-nvenc",
-                "--disable-mmal",
-                "--disable-omx",
-                "--disable-omx-rpi",
-                "--disable-cuda",
-                "--disable-cuvid",
-                "--disable-libmfx",
-                "--disable-libnpp",
-                "--disable-iconv",
-                "--disable-jni",
-                "--enable-optimizations",
-                "--enable-gpl",
-                "--enable-shared"
-            ],
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://github.com/FFmpeg/FFmpeg",
-                    "branch": "6d7192bcb7bbab17dc194e8dbb56c208bced0a92"
-                }
-            ],
-            "post-install" : [
-                "mkdir -p /app/lib/codecs/lib",
-                "mv /app/lib/libav*.so* /app/lib/libswresample.so* /app/lib/codecs/lib"
-            ]
-        },
-        {
-            "name" : "fdkaac",
-            "config-opts" : [
-                "--disable-static"
-            ],
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://github.com/mstorsjo/fdk-aac.git",
-                    "branch" : "v0.1.5",
-                    "commit" : "74c1a2a4f831285cbd93ec1427f1670d3c5c5e52"
-                }
-            ],
-            "post-install" : [
-                "mkdir -p /app/lib/codecs/lib",
-                "mv /app/lib/libfdk-aac.so* /app/lib/codecs/lib"
-            ]
-        },
-        {
-            "name": "opencv",
-            "buildsystem": "cmake",
-            "builddir": true,
-            "sources": [
-                {
-                    "type": "git",
-                    "branch": "2.4.13.6",
-                    "url": "https://github.com/opencv/opencv"
-                }
-            ]
-        },
-        {
-            "name" : "gstreamer",
-            "buildsystem" : "meson",
-            "builddir" : true,
-            "config-opts" : [
-                "-Ddisable_gtkdoc=true"
-            ],
-            "sources" : [
-                {
-                    "type" : "git",
-                    "branch" : "1.14.2",
-                    "url" : "git://anongit.freedesktop.org/gstreamer/gstreamer",
-                    "commit" : "afb3d1b3e0d02da8b0eb5bb501356650b38e5644"
-                }
-            ]
-        },
-        {
-            "name" : "gst-plugins-base",
-            "buildsystem" : "meson",
-            "config-opts" : [
-                "-Ddisable_gtkdoc=true"
-            ],
-            "builddir" : true,
-            "sources" : [
-                {
-                    "type" : "git",
-                    "branch" : "1.14.2",
-                    "url" : "git://anongit.freedesktop.org/gstreamer/gst-plugins-base",
-                    "commit" : "24f097564657bd630e68931c932ec9fd992a3785"
-                }
-            ]
-        },
-        {
-            "name" : "gst-plugins-good",
-            "buildsystem" : "meson",
-            "builddir" : true,
-            "config-opts" : [
-                "-Ddisable_gtkdoc=true"
-            ],
-            "sources" : [
-                {
-                    "type" : "git",
-                    "branch" : "1.14.2",
-                    "url" : "git://anongit.freedesktop.org/gstreamer/gst-plugins-good",
-                    "commit" : "4733e9715675d2dc52ed00e58d52388c56411cd2"
-                }
-            ]
-        },
-        {
-            "name" : "gst-plugins-ugly",
-            "buildsystem" : "meson",
-            "builddir" : true,
-            "config-opts" : [
-                "-Ddisable_gtkdoc=true"
-            ],
-            "sources" : [
-                {
-                    "type" : "git",
-                    "branch" : "1.14.2",
-                    "url" : "git://anongit.freedesktop.org/gstreamer/gst-plugins-ugly",
-                    "commit" : "df1bcfa0ba57859eb39610ef53f1eb744ca57465"
-                }
-            ],
-            "post-install" : [
-                "mkdir -p /app/lib/codecs/lib/gstreamer-1.0",
-                "mv /app/lib/gstreamer-1.0/libgstx264.so /app/lib/codecs/lib/gstreamer-1.0"
             ]
         },
         {
@@ -459,22 +110,299 @@
             ]
         },
         {
-            "name" : "gst-plugins-bad",
+            "name" : "frei0r-plugin",
+            "sources" : [
+                {
+                    "type" : "archive",
+                    "url": "https://github.com/dyne/frei0r/archive/v1.6.1.tar.gz",
+                    "sha256": "dae0ca623c83173788ce4fc74cb67ac7e50cf33a4412ee3d33bed284da1a8437"
+                }
+            ]
+        },
+        {
+            "name" : "libsoundtouch",
+            "sources" : [
+                {
+                    "type" : "archive",
+                    "url" : "http://www.surina.net/soundtouch/soundtouch-1.8.0.tar.gz",
+                    "sha256" : "3d4161d74ca25c5a98c69dbb8ea10fd2be409ba1a3a0bf81db407c4c261f166b"
+                }
+            ]
+        },
+        {
+            "name" : "vo-aacenc",
+            "sources" : [
+                {
+                    "type": "archive",
+                    "url": "https://downloads.sourceforge.net/opencore-amr/vo-aacenc/vo-aacenc-0.1.3.tar.gz",
+                    "mirror-urls": [
+                        "http://ftp.debian.org/debian/pool/main/v/vo-aacenc/vo-aacenc_0.1.3.orig.tar.gz"
+                    ],
+                    "sha256": "e51a7477a359f18df7c4f82d195dab4e14e7414cbd48cf79cc195fc446850f36"
+                }
+            ]
+        },
+        {
+            "name" : "x265",
+            "buildsystem" : "cmake",
+            "build-options" : {
+                "arch" : {
+                    "arm" : {
+                        "cxxflags" : "-fPIC"
+                    },
+                    "aarch64" : {
+                        "cxxflags" : "-fPIC"
+                    }
+                }
+            },
+            "subdir" : "source",
+            "sources" : [
+                {
+                    "type": "archive",
+                    "url": "https://get.videolan.org/x265/x265_3.2.1.tar.gz",
+                    "sha256": "fb9badcf92364fd3567f8b5aa0e5e952aeea7a39a2b864387cec31e3b58cbbcc"
+                }
+            ]
+        },
+        {
+            "name": "ffmpeg",
+            "config-opts": [
+                "--disable-static",
+                "--enable-shared",
+                "--enable-pic",
+                "--disable-avdevice",
+                "--disable-postproc",
+                "--disable-swscale",
+                "--disable-programs",
+                "--disable-ffplay",
+                "--disable-ffprobe",
+                "--disable-ffmpeg",
+                "--disable-encoder=flac",
+                "--disable-protocols",
+                "--disable-devices",
+                "--disable-network",
+                "--disable-hwaccels",
+                "--disable-dxva2",
+                "--disable-vdpau",
+                "--disable-filters",
+                "--enable-filter=yadif",
+                "--disable-doc",
+                "--disable-d3d11va",
+                "--disable-dxva2",
+                "--disable-audiotoolbox",
+                "--disable-videotoolbox",
+                "--disable-vaapi",
+                "--disable-crystalhd",
+                "--disable-mediacodec",
+                "--disable-nvenc",
+                "--disable-mmal",
+                "--disable-omx",
+                "--disable-omx-rpi",
+                "--disable-cuda",
+                "--disable-cuvid",
+                "--disable-libmfx",
+                "--disable-libnpp",
+                "--disable-iconv",
+                "--disable-jni",
+                "--disable-v4l2_m2m",
+                "--enable-gpl",
+                "--enable-optimizations"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/FFmpeg/FFmpeg.git",
+                    "branch": "n4.1.4",
+                    "commit": "9d06c1f95ebe4f9c2cc05d041dbfd3de52d2518a"
+                }
+            ]
+        },
+        {
+            "name" : "fdkaac",
+            "config-opts" : [
+                "--disable-static"
+            ],
+            "sources" : [
+                {
+                    "type": "git",
+                    "url": "https://github.com/mstorsjo/fdk-aac.git",
+                    "branch": "v0.1.6",
+                    "commit" : "a30bfced6b6d6d976c728552d247cb30dd86e238"
+                }
+            ]
+        },
+        {
+            "name": "opencv",
+            "buildsystem": "cmake",
+            "builddir": true,
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DOPENCV_EXTRA_MODULES_PATH=../contrib/modules",
+                "-DOPENCV_GENERATE_PKGCONFIG=1",
+                "-DBUILD_opencv_alphamat=OFF",
+                "-DBUILD_opencv_aruco=OFF",
+                "-DBUILD_opencv_bgsegm=ON",
+                "-DBUILD_opencv_bioinspired=OFF",
+                "-DBUILD_opencv_ccalib=OFF",
+                "-DBUILD_opencv_cnn_3dobj=OFF",
+                "-DBUILD_opencv_cudaarithm=OFF",
+                "-DBUILD_opencv_cudabgsegm=OFF",
+                "-DBUILD_opencv_cudacodec=OFF",
+                "-DBUILD_opencv_cudafeatures2d=OFF",
+                "-DBUILD_opencv_cudafilters=OFF",
+                "-DBUILD_opencv_cudaimgproc=OFF",
+                "-DBUILD_opencv_cudalegacy=OFF",
+                "-DBUILD_opencv_cudaobjdetect=OFF",
+                "-DBUILD_opencv_cudaoptflow=OFF",
+                "-DBUILD_opencv_cudastereo=OFF",
+                "-DBUILD_opencv_cudawarping=OFF",
+                "-DBUILD_opencv_cudev=OFF",
+                "-DBUILD_opencv_cvv=OFF",
+                "-DBUILD_opencv_datasets=OFF",
+                "-DBUILD_opencv_dnn_objdetect=OFF",
+                "-DBUILD_opencv_dnns_easily_fooled=OFF",
+                "-DBUILD_opencv_dnn_superres=OFF",
+                "-DBUILD_opencv_dpm=OFF",
+                "-DBUILD_opencv_face=OFF",
+                "-DBUILD_opencv_freetype=OFF",
+                "-DBUILD_opencv_fuzzy=OFF",
+                "-DBUILD_opencv_hdf=OFF",
+                "-DBUILD_opencv_hfs=OFF",
+                "-DBUILD_opencv_img_hash=OFF",
+                "-DBUILD_opencv_intensity_transform=OFF",
+                "-DBUILD_opencv_line_descriptor=OFF",
+                "-DBUILD_opencv_matlab=OFF",
+                "-DBUILD_opencv_optflow=OFF",
+                "-DBUILD_opencv_ovis=OFF",
+                "-DBUILD_opencv_phase_unwrapping=OFF",
+                "-DBUILD_opencv_plot=ON",
+                "-DBUILD_opencv_quality=OFF",
+                "-DBUILD_opencv_rapid=OFF",
+                "-DBUILD_opencv_reg=OFF",
+                "-DBUILD_opencv_rgbd=OFF",
+                "-DBUILD_opencv_saliency=OFF",
+                "-DBUILD_opencv_sfm=OFF",
+                "-DBUILD_opencv_shape=OFF",
+                "-DBUILD_opencv_stereo=OFF",
+                "-DBUILD_opencv_structured_light=OFF",
+                "-DBUILD_opencv_superres=OFF",
+                "-DBUILD_opencv_surface_matching=OFF",
+                "-DBUILD_opencv_text=OFF",
+                "-DBUILD_opencv_tracking=ON",
+                "-DBUILD_opencv_videostab=OFF",
+                "-DBUILD_opencv_viz=OFF",
+                "-DBUILD_opencv_xfeatures2d=OFF",
+                "-DBUILD_opencv_ximgproc=OFF",
+                "-DBUILD_opencv_xobjdetect=OFF",
+                "-DBUILD_opencv_xphoto=OFF"
+            ],
+            "cleanup": [
+                "/bin"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/opencv/opencv/archive/3.4.8.tar.gz",
+                    "sha256": "f0901648a1db3dc3af30e65082665921dbe998673137380450bdd91e8251b567"
+                },
+                {
+                    "type": "archive",
+                    "url": "https://github.com/opencv/opencv_contrib/archive/3.4.8.tar.gz",
+                    "sha256": "f7daa4136a73261566e4b372d0a5186ce46bb5dbdf6d1bcce0d373a1bb887f83",
+                    "dest": "contrib"
+                }
+            ]
+        },
+        {
+            "name" : "gstreamer",
             "buildsystem" : "meson",
             "builddir" : true,
             "config-opts" : [
-                "-Ddisable_gtkdoc=true"
+                "-Ddoc=disabled"
             ],
             "sources" : [
                 {
                     "type" : "git",
-                    "branch" : "1.14.2",
-                    "url" : "git://anongit.freedesktop.org/gstreamer/gst-plugins-bad",
-                    "commit" : "513ef5efdf85f9af4a016e8ae69f28cf16c9ec58"
+                    "branch" : "1.18.0",
+                    "url" : "https://gitlab.freedesktop.org/gstreamer/gstreamer.git",
+                    "commit" : "96148da56f9cbf23120e51ce59ab90f94d8b19b8"
+                }
+            ]
+        },
+        {
+            "name" : "gst-plugins-base",
+            "buildsystem" : "meson",
+            "config-opts" : [
+                "-Ddoc=disabled",
+                "--wrap-mode=nodownload"
+            ],
+            "builddir" : true,
+            "sources" : [
+                {
+                    "type" : "git",
+                    "branch" : "1.18.0",
+                    "url" : "https://gitlab.freedesktop.org/gstreamer/gst-plugins-base.git",
+                    "commit" : "f21623c1f60949ed6a77e2c2c3857be942cd2db5"
+                }
+            ]
+        },
+        {
+            "name" : "gst-plugins-good",
+            "buildsystem" : "meson",
+            "builddir" : true,
+            "config-opts" : [
+                "-Ddoc=disabled"
+            ],
+            "sources" : [
+                {
+                    "type" : "git",
+                    "branch" : "1.18.0",
+                    "url" : "https://gitlab.freedesktop.org/gstreamer/gst-plugins-good.git",
+                    "commit" : "6ef694ce7b40dda9f2163ed5e1b1de7378505ad0"
+                }
+            ]
+        },
+        {
+            "name" : "gst-plugins-ugly",
+            "buildsystem" : "meson",
+            "builddir" : true,
+            "config-opts" : [
+                "-Ddoc=disabled"
+            ],
+            "sources" : [
+                {
+                    "type" : "git",
+                    "branch" : "1.18.0",
+                    "url" : "https://gitlab.freedesktop.org/gstreamer/gst-plugins-ugly.git",
+                    "commit" : "ae91a81d9aa913cee1e8310af93a8fff5445628d"
                 }
             ],
             "post-install" : [
                 "mkdir -p /app/lib/codecs/lib/gstreamer-1.0",
+                "mv /app/lib/libx264.so* /app/lib/codecs/lib",
+                "mv /app/lib/gstreamer-1.0/libgstx264.so /app/lib/codecs/lib/gstreamer-1.0"
+            ]
+        },
+        {
+            "name" : "gst-plugins-bad",
+            "buildsystem" : "meson",
+            "builddir" : true,
+            "config-opts" : [
+                "-Ddoc=disabled"
+            ],
+            "sources" : [
+                {
+                    "type" : "git",
+                    "branch" : "1.18.0",
+                    "url" : "https://gitlab.freedesktop.org/gstreamer/gst-plugins-bad.git",
+                    "commit" : "7cb583bb0427819a6b59b783e7df67961df2155f"
+                }
+            ],
+            "post-install" : [
+                "mkdir -p /app/lib/codecs/lib/gstreamer-1.0",
+                "mv /app/lib/libvo-aacenc.so* /app/lib/codecs/lib",
+                "mv /app/lib/libx265.so* /app/lib/codecs/lib",
+                "mv /app/lib/libfdk-aac.so* /app/lib/codecs/lib",
                 "mv /app/lib/gstreamer-1.0/libgst{fdkaac,voaacenc,x265}.so /app/lib/codecs/lib/gstreamer-1.0"
             ]
         },
@@ -483,14 +411,19 @@
             "buildsystem" : "meson",
             "builddir" : true,
             "config-opts" : [
-                "-Ddisable_gtkdoc=true"
+                "-Ddoc=disabled"
             ],
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-1.14.2.tar.xz",
-                    "sha256" : "8a351c39c5cfc2bbd31ca434ec4a290a730a26efbdea962fdd8306dce5c576de"
+                    "url" : "https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-1.18.0.tar.xz",
+                    "sha256" : "42f93f5ce9a3fc22051e5f783a4574b56ebf213f331f75dcbc3552459bd3a06a"
                 }
+            ],
+            "post-install" : [
+                "mkdir -p /app/lib/codecs/lib",
+                "mv /app/lib/libav*.so* /app/lib/libswresample.so* /app/lib/codecs/lib",
+                "mv /app/lib/gstreamer-1.0/libgstlibav.so /app/lib/codecs/lib/gstreamer-1.0"
             ]
         },
         {
@@ -498,14 +431,15 @@
             "buildsystem" : "meson",
             "builddir" : true,
             "config-opts" : [
-                "-Dpygi-overrides-dir=/app/lib/python3.5/site-packages/gi/overrides/"
+                "-Dpygi-overrides-dir=/app/lib/python3.7/site-packages/gi/overrides/",
+                "--libdir=lib"
             ],
             "sources" : [
                 {
                     "type" : "git",
-                    "branch" : "1.14.2",
-                    "url" : "git://anongit.freedesktop.org/gstreamer/gst-python",
-                    "commit" : "75ac38f1282a18a5659bee487b58e3bac1a128c9"
+                    "branch" : "1.18.0",
+                    "url" : "https://gitlab.freedesktop.org/gstreamer/gst-python.git",
+                    "commit" : "a85f99e274fe14348645c61606463ff63ceb45eb"
                 }
             ]
         },
@@ -519,9 +453,9 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "branch" : "1.14.2",
-                    "url" : "git://anongit.freedesktop.org/gstreamer/gst-devtools",
-                    "commit" : "10586b5a26f3f63d56f31cbdab70e8ac68022303"
+                    "branch" : "1.18.0",
+                    "url" : "https://gitlab.freedesktop.org/gstreamer/gst-devtools.git",
+                    "commit" : "796b7caad02fc69a060865d23e8e8d53500991e4"
                 }
             ]
         },
@@ -535,9 +469,9 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "branch" : "1.14.2",
-                    "url" : "git://anongit.freedesktop.org/gstreamer/gstreamer-vaapi",
-                    "commit" : "bc395f954d1ac7c6b4009930422636f04f0781ad"
+                    "branch" : "1.18.0",
+                    "url" : "https://gitlab.freedesktop.org/gstreamer/gstreamer-vaapi.git",
+                    "commit" : "de6fb60929252d6ee066aa06e25302a3f4a9856e"
                 }
             ]
         },
@@ -546,33 +480,30 @@
             "buildsystem" : "meson",
             "builddir" : true,
             "config-opts" : [
-                "-Ddisable_gtkdoc=true"
+                "-Ddoc=disabled"
             ],
             "sources" : [
                 {
                     "type" : "git",
-                    "branch" : "1.14.2",
-                    "url" : "git://anongit.freedesktop.org/gstreamer/gst-editing-services",
-                    "commit" : "143f9d546ede487042b73e6c4801a80b5bb61abe"
+                    "url" : "https://gitlab.freedesktop.org/gstreamer/gst-editing-services.git",
+                    "branch" : "1.18.0",
+                    "commit" : "dba379fa7c3bb8a9e3761d821f159230f630f7f2"
                 }
             ]
         },
         {
-            "name" : "gst-transcoder",
-            "buildsystem" : "meson",
-            "builddir" : true,
-            "config-opts" : [
-                "-Ddisable_doc=true"
-            ],
-            "sources" : [
+            "name": "libpeas",
+            "buildsystem": "meson",
+            "sources": [
                 {
-                    "type" : "git",
-                    "branch" : "1.14.1",
-                    "url" : "https://github.com/pitivi/gst-transcoder",
-                    "commit" : "65f481dc2bab9358481918363bab9bb17afd7232"
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/GNOME/libpeas.git",
+                    "branch" : "libpeas-1.28.0",
+                    "commit" : "04a873b2dd71228eb3cf0fe0510cd0ea8721f43b"
                 }
             ]
         },
+
         {
             "name" : "pitivi",
             "buildsystem" : "meson",
@@ -581,8 +512,8 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/pitivi.git/",
-                    "branch" : "0.999.0",
-                    "commit" : "7258d43719eabdd0e729412e3277e03400961bf5"
+                    "branch" : "2020.09.0",
+                    "commit" : "a37b96cc81dafd6284e48b907d7b0ac1575f1664"
 		}
             ]
         }
