@@ -14,6 +14,7 @@
         "--env=DCONF_USER_CONFIG_DIR=.config/dconf",
         "--env=GST_PLUGIN_PATH=/app/lib/codecs/lib/gstreamer-1.0",
         "--env=GST_ENCODING_TARGET_PATH=/app/share/gstreamer-1.0/encoding-profiles/:/app/share/pitivi/encoding-profiles/",
+        "--env=LADSPA_PATH=/app/extensions/Plugins/ladspa",
         "--talk-name=org.freedesktop.Notifications",
         "--filesystem=host",
         "--device=dri"
@@ -43,6 +44,14 @@
             "add-ld-path" : "lib",
             "bundle" : true,
             "autodelete" : true
+        },
+        "org.freedesktop.LinuxAudio.Plugins": {
+            "directory": "extensions/Plugins",
+            "version": "19.08",
+            "add-ld-path": "lib",
+            "merge-dirs": "ladspa",
+            "subdirectories": true,
+            "no-autodownload": true
         }
     },
     "modules" : [
@@ -508,6 +517,9 @@
             "name" : "pitivi",
             "buildsystem" : "meson",
             "builddir" : true,
+            "post-install": [
+                "install -d /app/extensions/Plugins"
+            ],
             "sources" : [
                 {
                     "type" : "git",
