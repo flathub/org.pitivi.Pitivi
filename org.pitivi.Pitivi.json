@@ -15,6 +15,7 @@
         "--env=GST_PLUGIN_PATH=/app/lib/codecs/lib/gstreamer-1.0",
         "--env=GST_ENCODING_TARGET_PATH=/app/share/gstreamer-1.0/encoding-profiles/:/app/share/pitivi/encoding-profiles/",
         "--env=LADSPA_PATH=/app/extensions/Plugins/ladspa",
+        "--env=LV2_PATH=/app/extensions/Plugins/lv2",
         "--talk-name=org.freedesktop.Notifications",
         "--filesystem=host",
         "--device=dri"
@@ -49,7 +50,7 @@
             "directory": "extensions/Plugins",
             "version": "19.08",
             "add-ld-path": "lib",
-            "merge-dirs": "ladspa",
+            "merge-dirs": "ladspa;lv2",
             "subdirectories": true,
             "no-autodownload": true
         }
@@ -392,6 +393,8 @@
                 "mv /app/lib/gstreamer-1.0/libgstx264.so /app/lib/codecs/lib/gstreamer-1.0"
             ]
         },
+        "shared-modules/linux-audio/lv2.json",
+        "shared-modules/linux-audio/lilv.json",
         {
             "name" : "gst-plugins-bad",
             "buildsystem" : "meson",
