@@ -1,9 +1,9 @@
 {
-    "app-id" : "org.pitivi.Pitivi",
-    "runtime" : "org.gnome.Platform",
-    "runtime-version" : "3.36",
-    "command" : "pitivi",
-    "finish-args" : [
+    "app-id": "org.pitivi.Pitivi",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "3.38",
+    "command": "pitivi",
+    "finish-args": [
         "--socket=x11",
         "--share=ipc",
         "--socket=pulseaudio",
@@ -20,18 +20,18 @@
         "--filesystem=host",
         "--device=dri"
     ],
-    "sdk" : "org.gnome.Sdk",
-    "copy-icon" : true,
-    "build-options" : {
-        "env" : {
-            "GST_PLUGIN_SYSTEM_PATH" : "/app/lib/gstreamer-1.0/:/app/lib/codecs/lib/gstreamer-1.0/",
-            "FREI0R_PATH" : "/app/lib/frei0r-1/",
-            "PYTHON" : "python3"
+    "sdk": "org.gnome.Sdk",
+    "copy-icon": true,
+    "build-options": {
+        "env": {
+            "GST_PLUGIN_SYSTEM_PATH": "/app/lib/gstreamer-1.0/:/app/lib/codecs/lib/gstreamer-1.0/",
+            "FREI0R_PATH": "/app/lib/frei0r-1/",
+            "PYTHON": "python3"
         },
-        "append-ld-library-path" : "/app/lib/codecs/lib",
-        "ldflags" : "-L/app/lib/codecs/lib"
+        "append-ld-library-path": "/app/lib/codecs/lib",
+        "ldflags": "-L/app/lib/codecs/lib"
     },
-    "cleanup" : [
+    "cleanup": [
         "/include",
         "/lib/*.a",
         "/lib/*.la",
@@ -39,32 +39,45 @@
         "/lib/pkgconfig",
         "/share/man"
     ],
-    "add-extensions" : {
-        "org.pitivi.Pitivi.Codecs" : {
-            "directory" : "lib/codecs",
-            "add-ld-path" : "lib",
-            "bundle" : true,
-            "autodelete" : true
+    "add-extensions": {
+        "org.pitivi.Pitivi.Codecs": {
+            "directory": "lib/codecs",
+            "add-ld-path": "lib",
+            "bundle": true,
+            "autodelete": true
         },
         "org.freedesktop.LinuxAudio.Plugins": {
             "directory": "extensions/Plugins",
-            "version": "19.08",
+            "version": "20.08",
             "add-ld-path": "lib",
             "merge-dirs": "ladspa;lv2",
             "subdirectories": true,
             "no-autodownload": true
         }
     },
-    "modules" : [
+    "modules": [
         "python3-matplotlib.json",
         {
-            "name" : "gsound",
-            "sources" : [
+            "name": "libcanberra",
+            "sources": [
                 {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/gsound.git/",
-                    "branch" : "1.0.2",
-                    "commit" : "a86946b494aa32782b3f6334344d07b5c11d5219"
+                    "type": "git",
+                    "url": "git://git.0pointer.de/libcanberra",
+                    "branch": "c0620e432650e81062c1967cc669829dbd29b310"
+                }
+            ]
+        },
+        {
+            "name": "gsound",
+            "ensure-writable": [
+                "easy-install.pth"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/GNOME/gsound.git",
+                    "branch": "1.0.2",
+                    "commit": "a86946b494aa32782b3f6334344d07b5c11d5219"
                 }
             ]
         },
@@ -85,63 +98,56 @@
             ]
         },
         {
-            "name" : "libopus",
-            "sources" : [
-               {
-                    "type": "archive",
-                    "url": "https://ftp.osuosl.org/pub/xiph/releases/opus/opus-1.3.1.tar.gz",
-                    "sha256": "65b58e1e25b2a114157014736a3d9dfeaad8d41be1c8179866f144a2fb44ff9d"
-                }
-            ]
-        },
-        {
-            "name" : "gavl",
-            "rm-configure" : true,
-            "config-opts" : [
+            "name": "gavl",
+            "rm-configure": true,
+            "config-opts": [
                 "--without-doxygen"
             ],
-            "sources" : [
+            "sources": [
                 {
-                    "type" : "archive",
-                    "url" : "https://sourceforge.net/projects/gmerlin/files/gavl/1.4.0/gavl-1.4.0.tar.gz",
-                    "sha256" : "51aaac41391a915bd9bad07710957424b046410a276e7deaff24a870929d33ce"
+                    "type": "archive",
+                    "url": "https://downloads.sourceforge.net/project/gmerlin/gavl/1.4.0/gavl-1.4.0.tar.gz",
+                    "mirror-urls": [
+                        "http://http.debian.net/debian/pool/main/g/gavl/gavl_1.4.0.orig.tar.gz"
+                    ],
+                    "sha256": "51aaac41391a915bd9bad07710957424b046410a276e7deaff24a870929d33ce"
                 },
                 {
-                    "type" : "patch",
-                    "path" : "gavl/ubuntu_armel_ftbfs.patch"
+                    "type": "patch",
+                    "path": "gavl/ubuntu_armel_ftbfs.patch"
                 },
                 {
-                    "type" : "script",
-                    "dest-filename" : "autogen.sh",
-                    "commands" : [
+                    "type": "script",
+                    "dest-filename": "autogen.sh",
+                    "commands": [
                         "autoreconf -vfi"
                     ]
                 }
             ]
         },
         {
-            "name" : "frei0r-plugin",
-            "sources" : [
+            "name": "frei0r-plugin",
+            "sources": [
                 {
-                    "type" : "archive",
+                    "type": "archive",
                     "url": "https://github.com/dyne/frei0r/archive/v1.6.1.tar.gz",
                     "sha256": "dae0ca623c83173788ce4fc74cb67ac7e50cf33a4412ee3d33bed284da1a8437"
                 }
             ]
         },
         {
-            "name" : "libsoundtouch",
-            "sources" : [
+            "name": "libsoundtouch",
+            "sources": [
                 {
-                    "type" : "archive",
-                    "url" : "http://www.surina.net/soundtouch/soundtouch-1.8.0.tar.gz",
-                    "sha256" : "3d4161d74ca25c5a98c69dbb8ea10fd2be409ba1a3a0bf81db407c4c261f166b"
+                    "type": "archive",
+                    "url": "https://gitlab.com/soundtouch/soundtouch/-/archive/2.1.2/soundtouch-2.1.2.tar.bz2",
+                    "sha256": "992bba58ecda8c0a3a94cc9648ccebbb84fb6f4f8c1a90fbb4ec3817354ad40d"
                 }
             ]
         },
         {
-            "name" : "vo-aacenc",
-            "sources" : [
+            "name": "vo-aacenc",
+            "sources": [
                 {
                     "type": "archive",
                     "url": "https://downloads.sourceforge.net/opencore-amr/vo-aacenc/vo-aacenc-0.1.3.tar.gz",
@@ -153,20 +159,20 @@
             ]
         },
         {
-            "name" : "x265",
-            "buildsystem" : "cmake",
-            "build-options" : {
-                "arch" : {
-                    "arm" : {
-                        "cxxflags" : "-fPIC"
+            "name": "x265",
+            "buildsystem": "cmake",
+            "build-options": {
+                "arch": {
+                    "arm": {
+                        "cxxflags": "-fPIC"
                     },
-                    "aarch64" : {
-                        "cxxflags" : "-fPIC"
+                    "aarch64": {
+                        "cxxflags": "-fPIC"
                     }
                 }
             },
-            "subdir" : "source",
-            "sources" : [
+            "subdir": "source",
+            "sources": [
                 {
                     "type": "archive",
                     "url": "https://get.videolan.org/x265/x265_3.2.1.tar.gz",
@@ -228,16 +234,16 @@
             ]
         },
         {
-            "name" : "fdkaac",
-            "config-opts" : [
+            "name": "fdkaac",
+            "config-opts": [
                 "--disable-static"
             ],
-            "sources" : [
+            "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/mstorsjo/fdk-aac.git",
                     "branch": "v0.1.6",
-                    "commit" : "a30bfced6b6d6d976c728552d247cb30dd86e238"
+                    "commit": "a30bfced6b6d6d976c728552d247cb30dd86e238"
                 }
             ]
         },
@@ -324,70 +330,82 @@
             ]
         },
         {
-            "name" : "gstreamer",
-            "buildsystem" : "meson",
-            "builddir" : true,
-            "config-opts" : [
-                "-Ddoc=disabled"
-            ],
-            "sources" : [
+            "name": "orc",
+            "buildsystem": "meson",
+            "sources": [
                 {
-                    "type" : "git",
-                    "branch" : "1.18.0",
-                    "url" : "https://gitlab.freedesktop.org/gstreamer/gstreamer.git",
-                    "commit" : "96148da56f9cbf23120e51ce59ab90f94d8b19b8"
+                    "type": "git",
+                    "branch": "0.4.32",
+                    "url": "https://gitlab.freedesktop.org/gstreamer/orc.git"
                 }
             ]
         },
         {
-            "name" : "gst-plugins-base",
-            "buildsystem" : "meson",
-            "config-opts" : [
+            "name": "gstreamer",
+            "buildsystem": "meson",
+            "builddir": true,
+            "config-opts": [
+                "-Ddoc=disabled"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "branch": "1.18.3",
+                    "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git",
+                    "commit": "a42fe476d3ee5576921f67a331464065ec33b9a4"
+                }
+            ]
+        },
+        {
+            "name": "gst-plugins-base",
+            "buildsystem": "meson",
+            "config-opts": [
                 "-Ddoc=disabled",
+                "-Dorc=enabled",
                 "--wrap-mode=nodownload"
             ],
-            "builddir" : true,
-            "sources" : [
+            "builddir": true,
+            "sources": [
                 {
-                    "type" : "git",
-                    "branch" : "1.18.0",
-                    "url" : "https://gitlab.freedesktop.org/gstreamer/gst-plugins-base.git",
-                    "commit" : "f21623c1f60949ed6a77e2c2c3857be942cd2db5"
+                    "type": "git",
+                    "branch": "1.18.3",
+                    "url": "https://gitlab.freedesktop.org/gstreamer/gst-plugins-base.git",
+                    "commit": "2cc319ee13f6b72df3d432b7c75aca81feb260e5"
                 }
             ]
         },
         {
-            "name" : "gst-plugins-good",
-            "buildsystem" : "meson",
-            "builddir" : true,
-            "config-opts" : [
+            "name": "gst-plugins-good",
+            "buildsystem": "meson",
+            "builddir": true,
+            "config-opts": [
                 "-Ddoc=disabled"
             ],
-            "sources" : [
+            "sources": [
                 {
-                    "type" : "git",
-                    "branch" : "1.18.0",
-                    "url" : "https://gitlab.freedesktop.org/gstreamer/gst-plugins-good.git",
-                    "commit" : "6ef694ce7b40dda9f2163ed5e1b1de7378505ad0"
+                    "type": "git",
+                    "branch": "1.18.3",
+                    "url": "https://gitlab.freedesktop.org/gstreamer/gst-plugins-good.git",
+                    "commit": "e816c6cd73c9e0676828c9e227a049ebad3d019f"
                 }
             ]
         },
         {
-            "name" : "gst-plugins-ugly",
-            "buildsystem" : "meson",
-            "builddir" : true,
-            "config-opts" : [
+            "name": "gst-plugins-ugly",
+            "buildsystem": "meson",
+            "builddir": true,
+            "config-opts": [
                 "-Ddoc=disabled"
             ],
-            "sources" : [
+            "sources": [
                 {
-                    "type" : "git",
-                    "branch" : "1.18.0",
-                    "url" : "https://gitlab.freedesktop.org/gstreamer/gst-plugins-ugly.git",
-                    "commit" : "ae91a81d9aa913cee1e8310af93a8fff5445628d"
+                    "type": "git",
+                    "branch": "1.18.3",
+                    "url": "https://gitlab.freedesktop.org/gstreamer/gst-plugins-ugly.git",
+                    "commit": "ad60e5463f591caa1c8470f180fd0ef8fce4a802"
                 }
             ],
-            "post-install" : [
+            "post-install": [
                 "mkdir -p /app/lib/codecs/lib/gstreamer-1.0",
                 "mv /app/lib/libx264.so* /app/lib/codecs/lib",
                 "mv /app/lib/gstreamer-1.0/libgstx264.so /app/lib/codecs/lib/gstreamer-1.0"
@@ -396,21 +414,21 @@
         "shared-modules/linux-audio/lv2.json",
         "shared-modules/linux-audio/lilv.json",
         {
-            "name" : "gst-plugins-bad",
-            "buildsystem" : "meson",
-            "builddir" : true,
-            "config-opts" : [
+            "name": "gst-plugins-bad",
+            "buildsystem": "meson",
+            "builddir": true,
+            "config-opts": [
                 "-Ddoc=disabled"
             ],
-            "sources" : [
+            "sources": [
                 {
-                    "type" : "git",
-                    "branch" : "1.18.0",
-                    "url" : "https://gitlab.freedesktop.org/gstreamer/gst-plugins-bad.git",
-                    "commit" : "7cb583bb0427819a6b59b783e7df67961df2155f"
+                    "type": "git",
+                    "branch": "1.18.3",
+                    "url": "https://gitlab.freedesktop.org/gstreamer/gst-plugins-bad.git",
+                    "commit": "382e373d9be363f1e21b12990a4d12f1ecb6df41"
                 }
             ],
-            "post-install" : [
+            "post-install": [
                 "mkdir -p /app/lib/codecs/lib/gstreamer-1.0",
                 "mv /app/lib/libvo-aacenc.so* /app/lib/codecs/lib",
                 "mv /app/lib/libx265.so* /app/lib/codecs/lib",
@@ -419,87 +437,87 @@
             ]
         },
         {
-            "name" : "gst-libav",
-            "buildsystem" : "meson",
-            "builddir" : true,
-            "config-opts" : [
+            "name": "gst-libav",
+            "buildsystem": "meson",
+            "builddir": true,
+            "config-opts": [
                 "-Ddoc=disabled"
             ],
-            "sources" : [
+            "sources": [
                 {
-                    "type" : "archive",
-                    "url" : "https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-1.18.0.tar.xz",
-                    "sha256" : "42f93f5ce9a3fc22051e5f783a4574b56ebf213f331f75dcbc3552459bd3a06a"
+                    "type": "archive",
+                    "url": "https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-1.18.3.tar.xz",
+                    "sha256": "ad20546bcd78ac1e7cf194666d73c4f33efeb62647d2b6af22993b540699e91c"
                 }
             ],
-            "post-install" : [
+            "post-install": [
                 "mkdir -p /app/lib/codecs/lib",
                 "mv /app/lib/libav*.so* /app/lib/libswresample.so* /app/lib/codecs/lib",
                 "mv /app/lib/gstreamer-1.0/libgstlibav.so /app/lib/codecs/lib/gstreamer-1.0"
             ]
         },
         {
-            "name" : "gst-python",
-            "buildsystem" : "meson",
-            "builddir" : true,
-            "config-opts" : [
-                "-Dpygi-overrides-dir=/app/lib/python3.7/site-packages/gi/overrides/",
+            "name": "gst-python",
+            "buildsystem": "meson",
+            "builddir": true,
+            "config-opts": [
+                "-Dpygi-overrides-dir=/app/lib/python3.8/site-packages/gi/overrides/",
                 "--libdir=lib"
             ],
-            "sources" : [
+            "sources": [
                 {
-                    "type" : "git",
-                    "branch" : "1.18.0",
-                    "url" : "https://gitlab.freedesktop.org/gstreamer/gst-python.git",
-                    "commit" : "a85f99e274fe14348645c61606463ff63ceb45eb"
+                    "type": "git",
+                    "branch": "1.18.3",
+                    "url": "https://gitlab.freedesktop.org/gstreamer/gst-python.git",
+                    "commit": "eee2f2c7cf10f2e018f28f5ab8b95d17f74b60c9"
                 }
             ]
         },
         {
-            "name" : "gst-devtools",
-            "config-opts" : [
-                "-Ddisable_gtkdoc=true"
-            ],
-            "buildsystem" : "meson",
-            "builddir" : true,
-            "sources" : [
-                {
-                    "type" : "git",
-                    "branch" : "1.18.0",
-                    "url" : "https://gitlab.freedesktop.org/gstreamer/gst-devtools.git",
-                    "commit" : "796b7caad02fc69a060865d23e8e8d53500991e4"
-                }
-            ]
-        },
-        {
-            "name" : "gstreamer-vaapi",
-            "buildsystem" : "meson",
-            "builddir" : true,
-            "config-opts" : [
-                "-Ddisable_gtkdoc=true"
-            ],
-            "sources" : [
-                {
-                    "type" : "git",
-                    "branch" : "1.18.0",
-                    "url" : "https://gitlab.freedesktop.org/gstreamer/gstreamer-vaapi.git",
-                    "commit" : "de6fb60929252d6ee066aa06e25302a3f4a9856e"
-                }
-            ]
-        },
-        {
-            "name" : "gst-editing-services",
-            "buildsystem" : "meson",
-            "builddir" : true,
-            "config-opts" : [
+            "name": "gst-devtools",
+            "buildsystem": "meson",
+            "builddir": true,
+            "config-opts": [
                 "-Ddoc=disabled"
             ],
-            "sources" : [
+            "sources": [
                 {
-                    "type" : "git",
-                    "url" : "https://gitlab.freedesktop.org/gstreamer/gst-editing-services.git",
-                    "branch" : "1.18.0",
-                    "commit" : "dba379fa7c3bb8a9e3761d821f159230f630f7f2"
+                    "type": "git",
+                    "branch": "1.18.3",
+                    "url": "https://gitlab.freedesktop.org/gstreamer/gst-devtools.git",
+                    "commit": "6e3a178f0e6d42d9bb10641ab2e53095ab2cf3ed"
+                }
+            ]
+        },
+        {
+            "name": "gstreamer-vaapi",
+            "buildsystem": "meson",
+            "builddir": true,
+            "config-opts": [
+                "-Ddoc=disabled"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "branch": "1.18.3",
+                    "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer-vaapi.git",
+                    "commit": "5890079ecbf2f9c76a5ded398cda8fd2ac822d21"
+                }
+            ]
+        },
+        {
+            "name": "gst-editing-services",
+            "buildsystem": "meson",
+            "builddir": true,
+            "config-opts": [
+                "-Ddoc=disabled"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "branch": "1.18.3",
+                    "url": "https://gitlab.freedesktop.org/gstreamer/gst-editing-services.git",
+                    "commit": "cf8c2f1408796fa9a8c086c252005ca2b598aa43"
                 }
             ]
         },
@@ -510,26 +528,25 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/libpeas.git",
-                    "branch" : "libpeas-1.28.0",
-                    "commit" : "04a873b2dd71228eb3cf0fe0510cd0ea8721f43b"
+                    "branch": "libpeas-1.28.0",
+                    "commit": "04a873b2dd71228eb3cf0fe0510cd0ea8721f43b"
                 }
             ]
         },
-
         {
-            "name" : "pitivi",
-            "buildsystem" : "meson",
-            "builddir" : true,
+            "name": "pitivi",
+            "buildsystem": "meson",
+            "builddir": true,
             "post-install": [
                 "install -d /app/extensions/Plugins"
             ],
-            "sources" : [
+            "sources": [
                 {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/pitivi.git/",
-                    "branch" : "2020.09.0",
-                    "commit" : "a37b96cc81dafd6284e48b907d7b0ac1575f1664"
-		}
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/GNOME/pitivi.git",
+                    "branch": "2021.01.0",
+                    "commit": "abbc67ef2cb4eecc80a9e06ce140651f91a0cb4b"
+                }
             ]
         }
     ]
