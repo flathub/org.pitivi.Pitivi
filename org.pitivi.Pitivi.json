@@ -255,6 +255,8 @@
                 "-DCMAKE_BUILD_TYPE=Release",
                 "-DOPENCV_EXTRA_MODULES_PATH=../contrib/modules",
                 "-DOPENCV_GENERATE_PKGCONFIG=1",
+                "-DBUILD_PERF_TESTS=OFF",
+                "-DBUILD_TESTS=OFF",
                 "-DBUILD_opencv_alphamat=OFF",
                 "-DBUILD_opencv_aruco=OFF",
                 "-DBUILD_opencv_bgsegm=ON",
@@ -326,6 +328,11 @@
                     "url": "https://github.com/opencv/opencv_contrib/archive/3.4.8.tar.gz",
                     "sha256": "f7daa4136a73261566e4b372d0a5186ce46bb5dbdf6d1bcce0d373a1bb887f83",
                     "dest": "contrib"
+                },
+                {
+                    "type": "patch",
+                    "path": "opencv-16369.patch",
+                    "only-arches": [ "aarch64" ]
                 }
             ]
         },
