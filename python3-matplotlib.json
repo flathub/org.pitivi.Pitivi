@@ -7,38 +7,107 @@
     "sources": [
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/c9/57/a6c81c1d6b8973d288ec6df0993a71a61318c862afc1de71fd3aa1ba1dcd/Pillow-8.1.0-cp38-cp38-manylinux1_x86_64.whl",
-            "sha256": "cdbbe7dff4a677fb555a54f9bc0450f2a21a93c5ba2b44e09e54fcb72d2bd13d"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/f7/d2/e07d3ebb2bd7af696440ce7e754c59dd546ffe1bbe732c8ab68b9c834e61/cycler-0.10.0-py2.py3-none-any.whl",
-            "sha256": "1d8a5ae1ff6c5cf9b93e8811e581232ad8920aeec647c37316ceac982b08cb2d"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/99/04/41e831621ddec54f99e9e3693b8d4f2f583d7f3ee8df33bf9a7d6bf764de/kiwisolver-1.3.1-cp38-cp38-manylinux1_x86_64.whl",
-            "sha256": "78751b33595f7f9511952e7e60ce858c6d64db2e062afb325985ddbd34b5c131"
-        },
-        {
-            "type": "file",
+            "only-arches": [ "x86_64" ],
             "url": "https://files.pythonhosted.org/packages/de/cf/d81fece6931ab0a3427eb29c2da7c3dc8e611927609d737a55964a3e0ef5/matplotlib-3.3.3-cp38-cp38-manylinux1_x86_64.whl",
             "sha256": "83e6c895d93fdf93eeff1a21ee96778ba65ef258e5d284160f7c628fee40c38f"
+        }
+    ],
+    "modules": [
+        {
+            "name": "python3-matplotlib-deps",
+            "build-commands": [
+                "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} Pillow numpy cycler kiwisolver pyparsing python_dateutil"
+            ],
+            "buildsystem": "simple",
+            "sources": [
+                {
+                    "type": "file",
+                    "only-arches": [ "x86_64" ],
+                    "url": "https://files.pythonhosted.org/packages/c9/57/a6c81c1d6b8973d288ec6df0993a71a61318c862afc1de71fd3aa1ba1dcd/Pillow-8.1.0-cp38-cp38-manylinux1_x86_64.whl",
+                    "sha256": "cdbbe7dff4a677fb555a54f9bc0450f2a21a93c5ba2b44e09e54fcb72d2bd13d"
+                },
+                {
+                    "type": "file",
+                    "only-arches": [ "aarch64" ],
+                    "url": "https://files.pythonhosted.org/packages/b5/bd/323b51849a13aa16ba48701554ff5da304c7b38b1ab446fa6718513de6b4/Pillow-8.1.0-cp38-cp38-manylinux2014_aarch64.whl",
+                    "sha256": "f50e7a98b0453f39000619d845be8b06e611e56ee6e8186f7f60c3b1e2f0feae"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/f7/d2/e07d3ebb2bd7af696440ce7e754c59dd546ffe1bbe732c8ab68b9c834e61/cycler-0.10.0-py2.py3-none-any.whl",
+                    "sha256": "1d8a5ae1ff6c5cf9b93e8811e581232ad8920aeec647c37316ceac982b08cb2d"
+                },
+                {
+                    "type": "file",
+                    "only-arches": [ "x86_64" ],
+                    "url": "https://files.pythonhosted.org/packages/99/04/41e831621ddec54f99e9e3693b8d4f2f583d7f3ee8df33bf9a7d6bf764de/kiwisolver-1.3.1-cp38-cp38-manylinux1_x86_64.whl",
+                    "sha256": "78751b33595f7f9511952e7e60ce858c6d64db2e062afb325985ddbd34b5c131"
+                },
+                {
+                    "type": "file",
+                    "only-arches": [ "aarch64" ],
+                    "url": "https://files.pythonhosted.org/packages/de/2b/619d5cb29a3a6fc1f75b35204096c6995768960cdaf90c394592dfe8c738/kiwisolver-1.3.1-cp38-cp38-manylinux2014_aarch64.whl",
+                    "sha256": "a357fd4f15ee49b4a98b44ec23a34a95f1e00292a139d6015c11f55774ef10de"
+                },
+                {
+                    "type": "file",
+                    "only-arches": [ "x86_64" ],
+                    "url": "https://files.pythonhosted.org/packages/e5/7d/fe25dcdfc46d14e037cbb87e480ac067da36f56a8e65928bf1040ff35793/numpy-1.19.4-cp38-cp38-manylinux2010_x86_64.whl",
+                    "sha256": "1aeef46a13e51931c0b1cf8ae1168b4a55ecd282e6688fdb0a948cc5a1d5afb9"
+                },
+                {
+                    "type": "file",
+                    "only-arches": [ "aarch64" ],
+                    "url": "https://files.pythonhosted.org/packages/1a/07/6c01ec85918b64a69c54b2f36baffe168a5d4f73f485a33513b2f4a799ca/numpy-1.19.4-cp38-cp38-manylinux2014_aarch64.whl",
+                    "sha256": "08308c38e44cc926bdfce99498b21eec1f848d24c302519e64203a8da99a97db"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/8a/bb/488841f56197b13700afd5658fc279a2025a39e22449b7cf29864669b15d/pyparsing-2.4.7-py2.py3-none-any.whl",
+                    "sha256": "ef9d7589ef3c200abe66653d3f1ab1033c3c419ae9b9bdb1240a85b024efc88b"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/d4/70/d60450c3dd48ef87586924207ae8907090de0b306af2bce5d134d78615cb/python_dateutil-2.8.1-py2.py3-none-any.whl",
+                    "sha256": "75bb3f31ea686f1197762692a9ee6a7550b59fc6ca3a1f4b5d7e32fb98e2da2a"
+                }
+            ]
         },
         {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/e5/7d/fe25dcdfc46d14e037cbb87e480ac067da36f56a8e65928bf1040ff35793/numpy-1.19.4-cp38-cp38-manylinux2010_x86_64.whl",
-            "sha256": "1aeef46a13e51931c0b1cf8ae1168b4a55ecd282e6688fdb0a948cc5a1d5afb9"
+            "name": "python3-matplotlib-srcdeps",
+            "build-commands": [
+                "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} certifi"
+            ],
+            "buildsystem": "simple",
+            "only-arches": [ "aarch64" ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/5e/a0/5f06e1e1d463903cf0c0eebeb751791119ed7a4b3737fdc9a77f1cdfb51f/certifi-2020.12.5-py2.py3-none-any.whl",
+                    "sha256": "719a74fb9e33b9bd44cc7f3a8d94bc35e4049deebe19ba7d8e108280cfd59830"
+                }
+            ]
         },
         {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/8a/bb/488841f56197b13700afd5658fc279a2025a39e22449b7cf29864669b15d/pyparsing-2.4.7-py2.py3-none-any.whl",
-            "sha256": "ef9d7589ef3c200abe66653d3f1ab1033c3c419ae9b9bdb1240a85b024efc88b"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/d4/70/d60450c3dd48ef87586924207ae8907090de0b306af2bce5d134d78615cb/python_dateutil-2.8.1-py2.py3-none-any.whl",
-            "sha256": "75bb3f31ea686f1197762692a9ee6a7550b59fc6ca3a1f4b5d7e32fb98e2da2a"
+            "name": "python3-matplotlib-source",
+            "only-arches": [ "aarch64" ],
+            "build-commands": [
+                "python3 setup.py install --prefix=/app --root=/"
+            ],
+            "buildsystem": "simple",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://files.pythonhosted.org/packages/7b/b3/7c48f648bf83f39d4385e0169d1b68218b838e185047f7f613b1cfc57947/matplotlib-3.3.3.tar.gz",
+                    "sha256": "b1b60c6476c4cfe9e5cf8ab0d3127476fd3d5f05de0f343a452badaad0e4bdec"
+                },
+                {
+                    "type": "archive",
+                    "url": "https://downloads.sourceforge.net/project/freetype/freetype2/2.6.1/freetype-2.6.1.tar.gz",
+                    "dest": "build/freetype-2.6.1",
+                    "sha256": "0a3c7dfbda6da1e8fce29232e8e96d987ababbbf71ebc8c75659e4132c367014"
+                }
+            ]
         }
     ]
 }
