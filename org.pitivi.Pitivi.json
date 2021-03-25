@@ -1,7 +1,7 @@
 {
     "app-id": "org.pitivi.Pitivi",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.38",
+    "runtime-version": "42",
     "command": "pitivi",
     "finish-args": [
         "--socket=x11",
@@ -15,7 +15,7 @@
         "--env=GST_PLUGIN_PATH=/app/lib/codecs/lib/gstreamer-1.0",
         "--env=GST_ENCODING_TARGET_PATH=/app/share/gstreamer-1.0/encoding-profiles/:/app/share/pitivi/encoding-profiles/",
         "--env=LADSPA_PATH=/app/extensions/Plugins/ladspa",
-        "--env=LV2_PATH=/app/extensions/Plugins/lv2",
+        "--env=LV2_PATH=$HOME/.lv2:/app/extensions/Plugins/lv2",
         "--talk-name=org.freedesktop.Notifications",
         "--filesystem=host",
         "--device=dri"
@@ -48,7 +48,7 @@
         },
         "org.freedesktop.LinuxAudio.Plugins": {
             "directory": "extensions/Plugins",
-            "version": "20.08",
+            "version": "21.08",
             "add-ld-path": "lib",
             "merge-dirs": "ladspa;lv2",
             "subdirectories": true,
@@ -69,15 +69,13 @@
         },
         {
             "name": "gsound",
-            "ensure-writable": [
-                "easy-install.pth"
-            ],
+            "buildsystem": "meson",
             "sources": [
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/gsound.git",
-                    "branch": "1.0.2",
-                    "commit": "a86946b494aa32782b3f6334344d07b5c11d5219"
+                    "tag": "1.0.3",
+                    "commit": "95d36d60cf53e0e7c5d5325e0f1f4fc765a611ae"
                 }
             ]
         },
