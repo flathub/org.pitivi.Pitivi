@@ -129,8 +129,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gitlab.com/soundtouch/soundtouch/-/archive/2.1.2/soundtouch-2.1.2.tar.bz2",
-                    "sha256": "992bba58ecda8c0a3a94cc9648ccebbb84fb6f4f8c1a90fbb4ec3817354ad40d"
+                    "url": "https://codeberg.org/soundtouch/soundtouch/archive/2.1.2.tar.gz",
+                    "sha256": "bed0e74f9adbbf3a36c1fb50eddecb519538b0badeb546d85b594829f7f7075d"
                 }
             ]
         },
