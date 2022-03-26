@@ -57,16 +57,7 @@
     },
     "modules": [
         "python3-matplotlib.json",
-        {
-            "name": "libcanberra",
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "git://git.0pointer.de/libcanberra",
-                    "branch": "c0620e432650e81062c1967cc669829dbd29b310"
-                }
-            ]
-        },
+        "shared-modules/libcanberra/libcanberra.json",
         {
             "name": "gsound",
             "ensure-writable": [
