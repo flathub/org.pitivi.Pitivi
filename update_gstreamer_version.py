@@ -1,13 +1,14 @@
+#!/bin/env python3
 """
 Simple script to update the manifest GStreamer modules version.
 
 Run with:
 
-    $ ./update_gstreamer_version.py /path/to/a/gst-build <TAG>
+    $ ./update_gstreamer_version.py <MANIFEST> /path/to/a/gst-build <TAG>
 
 for example:
 
-    $ ./update_gstreamer_version.py /home/thiblahute/devel/gstreamer/gst-build 1.14.0
+    $ ./update_gstreamer_version.py org.pitivi.Pitivi.json /home/thiblahute/devel/gstreamer/gst-build 1.14.0
 """
 
 import os
