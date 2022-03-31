@@ -542,6 +542,10 @@
                     "url": "https://gitlab.gnome.org/GNOME/pitivi.git",
                     "tag": "2021.05.0",
                     "commit": "167f230fb3b68d9c960256cba245f003cd4dfa40"
+                },
+                {
+                    "type": "patch",
+                    "path": "pitivi-appdata.patch"
                 }
            ]
         }

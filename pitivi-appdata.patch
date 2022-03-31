@@ -1,0 +1,13 @@
+diff --git a/data/org.pitivi.Pitivi.appdata.xml.in b/data/org.pitivi.Pitivi.appdata.xml.in
+index f449d2a..f1a801d 100644
+--- a/data/org.pitivi.Pitivi.appdata.xml.in
++++ b/data/org.pitivi.Pitivi.appdata.xml.in
+@@ -21,7 +21,7 @@
+   </description>
+   <screenshots>
+     <screenshot type="default">
+-      <image>http://www.pitivi.org/i/screenshots/software_center_main.jpg</image>
++      <image>https://www.pitivi.org/i/screenshots/2020.05.png</image>
+     </screenshot>
+   </screenshots>
+   <url type="homepage">http://www.pitivi.org</url>
