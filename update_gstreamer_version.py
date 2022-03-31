@@ -41,7 +41,7 @@ def expand_json_file(manifest, gst_repos_path, tag):
             ["git", "rev-list", "-n", "1", tag],
             cwd=repo).decode("utf-8").strip("\n")
 
-        module["sources"][0]["branch"] = tag
+        module["sources"][0]["tag"] = tag
         module["sources"][0]["commit"] = commit
 
     with open(manifest, "w") as of:
