@@ -321,7 +321,9 @@
                 {
                     "type": "patch",
                     "path": "opencv-16369.patch",
-                    "only-arches": [ "aarch64" ]
+                    "only-arches": [
+                        "aarch64"
+                    ]
                 }
             ]
         },
@@ -457,7 +459,7 @@
             "buildsystem": "meson",
             "builddir": true,
             "config-opts": [
-                "-Dpygi-overrides-dir=/app/lib/python3.8/site-packages/gi/overrides/",
+                "-Dpygi-overrides-dir=/app/lib/python3.9/site-packages/gi/overrides/",
                 "--libdir=lib"
             ],
             "sources": [
@@ -547,7 +549,7 @@
                     "type": "patch",
                     "path": "pitivi-appdata.patch"
                 }
-           ]
+            ]
         }
     ]
 }
