@@ -4,7 +4,7 @@
     "runtime-version": "42",
     "command": "pitivi",
     "finish-args": [
-        "--socket=x11",
+        "--socket=fallback-x11",
         "--share=ipc",
         "--socket=pulseaudio",
         "--socket=wayland",
