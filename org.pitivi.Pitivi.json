@@ -1,10 +1,10 @@
 {
     "app-id": "org.pitivi.Pitivi",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.38",
+    "runtime-version": "42",
     "command": "pitivi",
     "finish-args": [
-        "--socket=x11",
+        "--socket=fallback-x11",
         "--share=ipc",
         "--socket=pulseaudio",
         "--socket=wayland",
@@ -15,7 +15,7 @@
         "--env=GST_PLUGIN_PATH=/app/lib/codecs/lib/gstreamer-1.0",
         "--env=GST_ENCODING_TARGET_PATH=/app/share/gstreamer-1.0/encoding-profiles/:/app/share/pitivi/encoding-profiles/",
         "--env=LADSPA_PATH=/app/extensions/Plugins/ladspa",
-        "--env=LV2_PATH=/app/extensions/Plugins/lv2",
+        "--env=LV2_PATH=$HOME/.lv2:/app/extensions/Plugins/lv2",
         "--talk-name=org.freedesktop.Notifications",
         "--filesystem=host",
         "--device=dri"
@@ -48,7 +48,7 @@
         },
         "org.freedesktop.LinuxAudio.Plugins": {
             "directory": "extensions/Plugins",
-            "version": "20.08",
+            "version": "21.08",
             "add-ld-path": "lib",
             "merge-dirs": "ladspa;lv2",
             "subdirectories": true,
@@ -57,27 +57,16 @@
     },
     "modules": [
         "python3-matplotlib.json",
-        {
-            "name": "libcanberra",
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "git://git.0pointer.de/libcanberra",
-                    "branch": "c0620e432650e81062c1967cc669829dbd29b310"
-                }
-            ]
-        },
+        "shared-modules/libcanberra/libcanberra.json",
         {
             "name": "gsound",
-            "ensure-writable": [
-                "easy-install.pth"
-            ],
+            "buildsystem": "meson",
             "sources": [
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/gsound.git",
-                    "branch": "1.0.2",
-                    "commit": "a86946b494aa32782b3f6334344d07b5c11d5219"
+                    "tag": "1.0.3",
+                    "commit": "95d36d60cf53e0e7c5d5325e0f1f4fc765a611ae"
                 }
             ]
         },
@@ -140,8 +129,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gitlab.com/soundtouch/soundtouch/-/archive/2.1.2/soundtouch-2.1.2.tar.bz2",
-                    "sha256": "992bba58ecda8c0a3a94cc9648ccebbb84fb6f4f8c1a90fbb4ec3817354ad40d"
+                    "url": "https://codeberg.org/soundtouch/soundtouch/archive/2.1.2.tar.gz",
+                    "sha256": "bed0e74f9adbbf3a36c1fb50eddecb519538b0badeb546d85b594829f7f7075d"
                 }
             ]
         },
@@ -228,7 +217,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/FFmpeg/FFmpeg.git",
-                    "branch": "n4.1.4",
+                    "tag": "n4.1.4",
                     "commit": "9d06c1f95ebe4f9c2cc05d041dbfd3de52d2518a"
                 }
             ]
@@ -242,7 +231,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/mstorsjo/fdk-aac.git",
-                    "branch": "v0.1.6",
+                    "tag": "v0.1.6",
                     "commit": "a30bfced6b6d6d976c728552d247cb30dd86e238"
                 }
             ]
@@ -332,7 +321,9 @@
                 {
                     "type": "patch",
                     "path": "opencv-16369.patch",
-                    "only-arches": [ "aarch64" ]
+                    "only-arches": [
+                        "aarch64"
+                    ]
                 }
             ]
         },
@@ -342,7 +333,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "0.4.32",
+                    "tag": "0.4.32",
                     "url": "https://gitlab.freedesktop.org/gstreamer/orc.git"
                 }
             ]
@@ -357,9 +348,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.18.3",
+                    "tag": "1.18.6",
                     "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git",
-                    "commit": "a42fe476d3ee5576921f67a331464065ec33b9a4"
+                    "commit": "793792d5cd6be0297adec74ad35a87b764812c0b"
                 }
             ]
         },
@@ -375,9 +366,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.18.3",
+                    "tag": "1.18.6",
                     "url": "https://gitlab.freedesktop.org/gstreamer/gst-plugins-base.git",
-                    "commit": "2cc319ee13f6b72df3d432b7c75aca81feb260e5"
+                    "commit": "2d5385f55a7d29975039692629bde3981e5d29cd"
                 }
             ]
         },
@@ -391,9 +382,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.18.3",
+                    "tag": "1.18.6",
                     "url": "https://gitlab.freedesktop.org/gstreamer/gst-plugins-good.git",
-                    "commit": "e816c6cd73c9e0676828c9e227a049ebad3d019f"
+                    "commit": "7747342a54ae56013a297b6554bfb3f12bde6784"
                 }
             ]
         },
@@ -407,9 +398,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.18.3",
+                    "tag": "1.18.6",
                     "url": "https://gitlab.freedesktop.org/gstreamer/gst-plugins-ugly.git",
-                    "commit": "ad60e5463f591caa1c8470f180fd0ef8fce4a802"
+                    "commit": "8f97a05e1d2cb3cd2548cde2e70ea6d335040f59"
                 }
             ],
             "post-install": [
@@ -430,9 +421,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.18.3",
+                    "tag": "1.18.6",
                     "url": "https://gitlab.freedesktop.org/gstreamer/gst-plugins-bad.git",
-                    "commit": "382e373d9be363f1e21b12990a4d12f1ecb6df41"
+                    "commit": "5d07db447c33fe217a6c7f8a910307c236ce1674"
                 }
             ],
             "post-install": [
@@ -453,8 +444,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-1.18.3.tar.xz",
-                    "sha256": "ad20546bcd78ac1e7cf194666d73c4f33efeb62647d2b6af22993b540699e91c"
+                    "url": "https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-1.18.6.tar.xz",
+                    "sha256": "e4e50dcd5a29441ae34de60d2221057e8064ed824bb6ca4dc0fd9ee88fbe9b81"
                 }
             ],
             "post-install": [
@@ -468,15 +459,15 @@
             "buildsystem": "meson",
             "builddir": true,
             "config-opts": [
-                "-Dpygi-overrides-dir=/app/lib/python3.8/site-packages/gi/overrides/",
+                "-Dpygi-overrides-dir=/app/lib/python3.9/site-packages/gi/overrides/",
                 "--libdir=lib"
             ],
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.18.3",
+                    "tag": "1.18.6",
                     "url": "https://gitlab.freedesktop.org/gstreamer/gst-python.git",
-                    "commit": "eee2f2c7cf10f2e018f28f5ab8b95d17f74b60c9"
+                    "commit": "d9e8e96410ef2552470445d78554184080a4a4b5"
                 }
             ]
         },
@@ -490,9 +481,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.18.3",
+                    "tag": "1.18.6",
                     "url": "https://gitlab.freedesktop.org/gstreamer/gst-devtools.git",
-                    "commit": "6e3a178f0e6d42d9bb10641ab2e53095ab2cf3ed"
+                    "commit": "5c8e4b99864162f90c6e1c1946229c604067ac03"
                 }
             ]
         },
@@ -506,9 +497,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.18.3",
+                    "tag": "1.18.6",
                     "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer-vaapi.git",
-                    "commit": "5890079ecbf2f9c76a5ded398cda8fd2ac822d21"
+                    "commit": "c88768774522e0794ac375736a685e21e436d2d2"
                 }
             ]
         },
@@ -522,9 +513,9 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1.18.3",
+                    "tag": "1.18.6",
                     "url": "https://gitlab.freedesktop.org/gstreamer/gst-editing-services.git",
-                    "commit": "cf8c2f1408796fa9a8c086c252005ca2b598aa43"
+                    "commit": "8d845a8f6d1756d15a0e343f2744fd66daf2b443"
                 }
             ]
         },
@@ -535,7 +526,7 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/libpeas.git",
-                    "branch": "libpeas-1.28.0",
+                    "tag": "libpeas-1.28.0",
                     "commit": "04a873b2dd71228eb3cf0fe0510cd0ea8721f43b"
                 }
             ]
@@ -551,10 +542,14 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/pitivi.git",
-                    "branch": "2021.05.0",
+                    "tag": "2021.05.0",
                     "commit": "167f230fb3b68d9c960256cba245f003cd4dfa40"
+                },
+                {
+                    "type": "patch",
+                    "path": "pitivi-appdata.patch"
                 }
-           ]
+            ]
         }
     ]
 }

@@ -1,13 +1,14 @@
+#!/bin/env python3
 """
 Simple script to update the manifest GStreamer modules version.
 
 Run with:
 
-    $ ./update_gstreamer_version.py /path/to/a/gst-build <TAG>
+    $ ./update_gstreamer_version.py <MANIFEST> /path/to/a/gst-build <TAG>
 
 for example:
 
-    $ ./update_gstreamer_version.py /home/thiblahute/devel/gstreamer/gst-build 1.14.0
+    $ ./update_gstreamer_version.py org.pitivi.Pitivi.json /home/thiblahute/devel/gstreamer/gst-build 1.14.0
 """
 
 import os
@@ -41,7 +42,7 @@ def expand_json_file(manifest, gst_repos_path, tag):
             ["git", "rev-list", "-n", "1", tag],
             cwd=repo).decode("utf-8").strip("\n")
 
-        module["sources"][0]["branch"] = tag
+        module["sources"][0]["tag"] = tag
         module["sources"][0]["commit"] = commit
 
     with open(manifest, "w") as of:
