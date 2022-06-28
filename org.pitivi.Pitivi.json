@@ -57,6 +57,7 @@
     },
     "modules": [
         "python3-matplotlib.json",
+        "python3-librosa.json",
         "shared-modules/libcanberra/libcanberra.json",
         {
             "name": "gsound",
@@ -542,12 +543,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/pitivi.git",
-                    "tag": "2021.05.0",
-                    "commit": "167f230fb3b68d9c960256cba245f003cd4dfa40"
-                },
-                {
-                    "type": "patch",
-                    "path": "pitivi-appdata.patch"
+                    "tag": "2022.06.0",
+                    "commit": "7cbe1d9bd39506e139a7747ea3896bb121d0773d"
                 }
             ]
         }
