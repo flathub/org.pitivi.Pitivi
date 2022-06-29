@@ -2,6 +2,7 @@
     "app-id": "org.pitivi.Pitivi",
     "runtime": "org.gnome.Platform",
     "runtime-version": "42",
+    "sdk": "org.gnome.Sdk",
     "command": "pitivi",
     "finish-args": [
         "--socket=fallback-x11",
@@ -20,7 +21,6 @@
         "--filesystem=host",
         "--device=dri"
     ],
-    "sdk": "org.gnome.Sdk",
     "copy-icon": true,
     "build-options": {
         "env": {
@@ -57,6 +57,28 @@
     },
     "modules": [
         "python3-matplotlib.json",
+        {
+            "name": "lapack",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "cleanup": [
+                "/lib/cmake"
+            ],
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+                "-DBUILD_SHARED_LIBS=ON",
+                "-DBUILD_TESTING=OFF",
+                "-DLAPACKE=ON",
+                "-DCBLAS=ON"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "http://www.netlib.org/lapack/lapack-3.8.0.tar.gz",
+                    "sha512": "17786cb7306fccdc9b4a242de7f64fc261ebe6a10b6ec55f519deb4cb673cb137e8742aa5698fd2dc52f1cd56d3bd116af3f593a01dcf6770c4dcc86c50b2a7f"
+                }
+            ]
+        },
         "python3-librosa.json",
         "shared-modules/libcanberra/libcanberra.json",
         {
@@ -245,6 +267,7 @@
                 "-DCMAKE_BUILD_TYPE=Release",
                 "-DOPENCV_EXTRA_MODULES_PATH=../contrib/modules",
                 "-DOPENCV_GENERATE_PKGCONFIG=1",
+                "-DWITH_LAPACK=OFF",
                 "-DBUILD_PERF_TESTS=OFF",
                 "-DBUILD_TESTS=OFF",
                 "-DBUILD_opencv_alphamat=OFF",

@@ -4,27 +4,6 @@
     "build-commands": [],
     "modules": [
         {
-            "name": "lapack",
-            "buildsystem": "cmake-ninja",
-            "builddir": true,
-            "config-opts": [
-                "-DCMAKE_BUILD_TYPE=Release",
-                "-DBUILD_SHARED_LIBS=ON",
-                "-DBUILD_TESTING=OFF",
-                "-DCMAKE_Fortran_COMPILER=gfortran",
-                "-DLAPACKE=ON",
-                "-DCBLAS=ON"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://github.com/Reference-LAPACK/lapack/archive/refs/tags/v3.10.1.tar.gz",
-                    "sha256": "cd005cd021f144d7d5f7f33c943942db9f03a28d110d6a3b80d718a295f7f714"
-                }
-            ],
-            "cleanup": [ "/lib/cmake" ]
-        },
-        {
             "//": "scipy requires pybind11 to be installed, otherwise: Error: pybind11 must be installed before running the build.",
             "name": "python-pybind11",
             "buildsystem": "simple",
