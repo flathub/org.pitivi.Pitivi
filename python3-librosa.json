@@ -1,38 +1,78 @@
 {
     "name": "python3-lapack-scipy-librosa",
     "buildsystem": "simple",
+    "build-commands": [],
     "modules": [
         {
             "name": "lapack",
-            "buildsystem": "cmake",
+            "buildsystem": "cmake-ninja",
             "builddir": true,
             "config-opts": [
-                "-DCMAKE_INSTALL_PREFIX=/app",
-                "-DCMAKE_INSTALL_LIBDIR=lib",
                 "-DCMAKE_BUILD_TYPE=Release",
                 "-DBUILD_SHARED_LIBS=ON",
                 "-DBUILD_TESTING=OFF",
+                "-DCMAKE_Fortran_COMPILER=gfortran",
                 "-DLAPACKE=ON",
                 "-DCBLAS=ON"
             ],
             "sources": [
                 {
-                    "type": "file",
+                    "type": "archive",
                     "url": "https://github.com/Reference-LAPACK/lapack/archive/refs/tags/v3.10.1.tar.gz",
                     "sha256": "cd005cd021f144d7d5f7f33c943942db9f03a28d110d6a3b80d718a295f7f714"
                 }
             ],
-            "cleanup": [
-                "/lib/cmake"
+            "cleanup": [ "/lib/cmake" ]
+        },
+        {
+            "//": "scipy requires pybind11 to be installed, otherwise: Error: pybind11 must be installed before running the build.",
+            "name": "python-pybind11",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pybind11\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/fd/24/efc9e62aa1baa48622028c59ae2c70fa134801e8acbdf30e5b594fe5a360/pybind11-2.9.2-py2.py3-none-any.whl",
+                    "sha256": "20f56674da31c96bca7569b91e60f2bd30d693f0728541412ec927574f7bc9df"
+                }
+            ]
+        },
+        {
+            "//": "scipy requires pythran to be installed: scipy/interpolate/setup.py: from pythran.dist import PythranExtension",
+            "name": "python-pythran",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pythran\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/a3/58/35da89ee790598a0700ea49b2a66594140f44dec458c07e8e3d4979137fc/ply-3.11-py2.py3-none-any.whl",
+                    "sha256": "096f9b8350b65ebd2fd1346b12452efe5b9607f7482813ffca50c22722a807ce"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/5f/1c/b59500a88c5c3d9d601c5ca62b9df5e0964764472faed82a182958a922c5/gast-0.5.3-py3-none-any.whl",
+                    "sha256": "211aac1e58c167b25d3504998f2db694454a24bb1fb1225bce99420166f21d6a"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/cc/4a/af3f1b3d00efd47309b7a0e28351e06453727fa55d9b3a45fd4b91031a63/beniget-0.4.1-py3-none-any.whl",
+                    "sha256": "cb061256631313f9d06031b824f7f403baecaf609b2d3d14d43f23356cf143f2"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/ae/5a/2fc283c873b9d3f5a612238165756b9e75ac345250f6c1511e0c60c181b5/pythran-0.11.0-py3-none-any.whl",
+                    "sha256": "8fea162e6096c6a3d45613a9a5389db739bf78805e713f853c9fcc7113ab9369"
+                }
             ]
         },
         {
             "name": "python3-scipy",
             "buildsystem": "simple",
             "build-commands": [
-                "echo 'scipy requires pybind11 to be installed, otherwise:'",
-                "echo '    Error: pybind11 must be installed before running the build.'",
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pybind11\" --no-build-isolation",
                 "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"scipy\" --no-build-isolation"
             ],
             "build-options": {
@@ -46,18 +86,8 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/fd/24/efc9e62aa1baa48622028c59ae2c70fa134801e8acbdf30e5b594fe5a360/pybind11-2.9.2-py2.py3-none-any.whl",
-                    "sha256": "20f56674da31c96bca7569b91e60f2bd30d693f0728541412ec927574f7bc9df"
-                },
-                {
-                    "type": "file",
                     "url": "https://files.pythonhosted.org/packages/26/b5/9330f004b9a3b2b6a31f59f46f1617ce9ca15c0e7fe64288c20385a05c9d/scipy-1.8.1.tar.gz",
                     "sha256": "9e3fb1b0e896f14a85aa9a28d5f755daaeeb54c897b746df7a55ccb02b340f33"
-                },
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/f6/d8/ab692a75f584d13c6542c3994f75def5bce52ded9399f52e230fe402819d/numpy-1.22.4.zip",
-                    "sha256": "425b390e4619f58d8526b3dcf656dde069133ae5c240229821f01b5f44ea07af"
                 }
             ]
         },
@@ -112,6 +142,18 @@
                     "type": "file",
                     "url": "https://files.pythonhosted.org/packages/90/fc/313c916fb49495ac7c1f9ab213cd3d3285342691b860a2810a51c6c1a10e/llvmlite-0.38.1.tar.gz",
                     "sha256": "0622a86301fcf81cc50d7ed5b4bebe992c030580d413a8443b328ed4f4d82561"
+                },
+                {
+                    "type": "file",
+                    "only-arches": [ "x86_64" ],
+                    "url": "https://files.pythonhosted.org/packages/2f/9d/141a4aacb37c5ca7f822180c5a703a2a90fcef6c498752a430886bd22dfa/llvmlite-0.38.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+                    "sha256": "9c8fac4edbadefa4dddf5dc6cca76bc2ae81df211dcd16a6638d60cc41249e56"
+                },
+                {
+                    "type": "file",
+                    "only-arches": [ "aarch64" ],
+                    "url": "https://files.pythonhosted.org/packages/42/b4/f436ceff2ac38e071132e50905ba2fb57a6a3026cee5e5fdfcd5dad713de/llvmlite-0.38.1-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+                    "sha256": "0e609f7312a439b53b6f622d99180c3ff6a3e1e4ceca4d18aca1c5b46f4e3664"
                 },
                 {
                     "type": "file",
