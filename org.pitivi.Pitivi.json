@@ -175,9 +175,6 @@
             "buildsystem": "cmake",
             "build-options": {
                 "arch": {
-                    "arm": {
-                        "cxxflags": "-fPIC"
-                    },
                     "aarch64": {
                         "cxxflags": "-fPIC"
                     }
