@@ -1,7 +1,7 @@
 {
     "app-id": "org.pitivi.Pitivi",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "42",
+    "runtime-version": "44",
     "sdk": "org.gnome.Sdk",
     "command": "pitivi",
     "finish-args": [
@@ -9,10 +9,7 @@
         "--share=ipc",
         "--socket=pulseaudio",
         "--socket=wayland",
-        "--filesystem=xdg-run/dconf",
-        "--filesystem=~/.config/dconf:ro",
-        "--talk-name=ca.desrt.dconf",
-        "--env=DCONF_USER_CONFIG_DIR=.config/dconf",
+        "--metadata=X-DConf=migrate-path=/org/pitivi/Pitivi/",
         "--env=GST_PLUGIN_PATH=/app/lib/codecs/lib/gstreamer-1.0",
         "--env=GST_ENCODING_TARGET_PATH=/app/share/gstreamer-1.0/encoding-profiles/:/app/share/pitivi/encoding-profiles/",
         "--env=LADSPA_PATH=/app/extensions/Plugins/ladspa",
@@ -341,6 +338,10 @@
                 },
                 {
                     "type": "patch",
+                    "path": "opencv-werror.patch"
+                },
+                {
+                    "type": "patch",
                     "path": "opencv-16369.patch",
                     "only-arches": [
                         "aarch64"
@@ -350,12 +351,12 @@
         },
         "shared-modules/linux-audio/lv2.json",
         "shared-modules/linux-audio/lilv.json",
+        "shared-modules/libsoup/libsoup-2.4.json",
         {
             "name": "gstreamer",
             "buildsystem": "meson",
             "builddir": true,
             "config-opts": [
-                "-Dpygi-overrides-dir=/app/lib/python3.9/site-packages/gi/overrides/",
                 "--libdir=lib",
                 "-Dgpl=enabled",
                 "-Dbad=enabled",
@@ -376,14 +377,14 @@
             "sources": [
                 {
                     "type": "git",
-                    "tag": "1.20.3",
+                    "tag": "1.20.6",
                     "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git",
-                    "commit": "ccf22e315cedf81e0075ab179ffb1b733da5206e"
+                    "commit": "b7d3037cca2fe72c5b7daab5e0617e61ae013dcc"
                 },
                 {
                     "type": "git",
                     "url": "https://gitlab.freedesktop.org/gstreamer/orc.git",
-                    "commit": "b8a83aaf62d908b5750627173f37f8a40ec65d00",
+                    "commit": "887392103956a8733a750c4442e2664d5c26527d",
                     "dest": "subprojects/orc"
                 }
             ]
