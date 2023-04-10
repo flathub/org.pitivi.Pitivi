@@ -125,14 +125,14 @@
                 {
                     "type": "file",
                     "only-arches": [ "x86_64" ],
-                    "url": "https://files.pythonhosted.org/packages/2f/9d/141a4aacb37c5ca7f822180c5a703a2a90fcef6c498752a430886bd22dfa/llvmlite-0.38.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
-                    "sha256": "9c8fac4edbadefa4dddf5dc6cca76bc2ae81df211dcd16a6638d60cc41249e56"
+                    "url": "https://files.pythonhosted.org/packages/90/1f/e6a7c0f290d9888748d7719e50f24764d7be60ac1df090a4e39da73b7154/llvmlite-0.38.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+                    "sha256": "0c0adce1793d66d009c554809f27baeb6258bf13f6fbaa12eff7443500caec25"
                 },
                 {
                     "type": "file",
                     "only-arches": [ "aarch64" ],
-                    "url": "https://files.pythonhosted.org/packages/42/b4/f436ceff2ac38e071132e50905ba2fb57a6a3026cee5e5fdfcd5dad713de/llvmlite-0.38.1-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
-                    "sha256": "0e609f7312a439b53b6f622d99180c3ff6a3e1e4ceca4d18aca1c5b46f4e3664"
+                    "url": "https://files.pythonhosted.org/packages/b4/3b/070ff0a6f629b00024497fe8a34baa3bb0abb0e74fe29b27e5d082479893/llvmlite-0.38.1-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+                    "sha256": "633c9026eb43b9903cc4ffbc1c7d5293b2e3ad95d06fa9eab0f6ce6ff6ea15b3"
                 },
                 {
                     "type": "file",

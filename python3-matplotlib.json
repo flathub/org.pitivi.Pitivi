@@ -62,14 +62,14 @@
                 {
                     "type": "file",
                     "only-arches": [ "x86_64" ],
-                    "url": "https://files.pythonhosted.org/packages/df/ac/53590ad20fe1ea57145fd99ba4b89d2c340a5e07ca939e6a4ccd1d198d05/numpy-1.19.4-cp39-cp39-manylinux2010_x86_64.whl",
-                    "sha256": "f0d3929fe88ee1c155129ecd82f981b8856c5d97bcb0d5f23e9b4242e79d1de3"
+                    "url": "https://files.pythonhosted.org/packages/b0/f4/d67c8c39efe3c45dfd32bb2a3fc49cbbe5496e575cc42b8bac60fe7b6701/numpy-1.22.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+                    "sha256": "a911e317e8c826ea632205e63ed8507e0dc877dcdc49744584dfc363df9ca08c"
                 },
                 {
                     "type": "file",
                     "only-arches": [ "aarch64" ],
-                    "url": "https://files.pythonhosted.org/packages/f0/9d/d73a7d7fe96b2658bf37e97376d56f688c1a1bf65691dcfbfe8fd5c9d56d/numpy-1.19.4-cp39-cp39-manylinux2014_aarch64.whl",
-                    "sha256": "c42c4b73121caf0ed6cd795512c9c09c52a7287b04d105d112068c1736d7c753"
+                    "url": "https://files.pythonhosted.org/packages/91/18/7949972b5254f88f040f53dc6f019fcb21597d6f37f7446d71019acece03/numpy-1.22.4-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+                    "sha256": "43a8ca7391b626b4c4fe20aefe79fec683279e31e7c79716863b4b25021e0e74"
                 },
                 {
                     "type": "file",
