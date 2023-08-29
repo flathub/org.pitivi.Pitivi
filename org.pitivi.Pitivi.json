@@ -71,8 +71,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "http://www.netlib.org/lapack/lapack-3.8.0.tar.gz",
-                    "sha512": "17786cb7306fccdc9b4a242de7f64fc261ebe6a10b6ec55f519deb4cb673cb137e8742aa5698fd2dc52f1cd56d3bd116af3f593a01dcf6770c4dcc86c50b2a7f"
+                    "url": "https://github.com/Reference-LAPACK/lapack/archive/refs/tags/v3.11.tar.gz",
+                    "sha256": "5a5b3bac27709d8c66286b7a0d1d7bf2d7170ec189a1a756fdf812c97aa7fd10"
                 }
             ]
         },
@@ -101,8 +101,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "http://download.videolan.org/pub/x264/snapshots/x264-snapshot-20191103-2245-stable.tar.bz2",
-                    "sha256": "d74f8f819104a94b0bd075aae39652b1957bcdd460e09b5202582c86e95a5bc0"
+                    "url": "https://download.videolan.org/pub/x264/snapshots/x264-snapshot-20191217-2245-stable.tar.bz2",
+                    "sha256": "b2495c8f2930167d470994b1ce02b0f4bfb24b3317ba36ba7f112e9809264160"
                 }
             ]
         },
@@ -136,22 +136,28 @@
         },
         {
             "name": "frei0r-plugin",
+            "buildsystem": "cmake-ninja",
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/dyne/frei0r/archive/v1.6.1.tar.gz",
-                    "sha256": "dae0ca623c83173788ce4fc74cb67ac7e50cf33a4412ee3d33bed284da1a8437"
+                    "url": "https://github.com/dyne/frei0r/archive/v2.3.1.tar.gz",
+                    "sha256": "dd6dbe49ba743421d8ced07781ca09c2ac62522beec16abf1750ef6fe859ddc9"
                 }
             ]
         },
         {
-            "name": "libsoundtouch",
+            "name": "soundtouch",
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://codeberg.org/soundtouch/soundtouch/archive/2.1.2.tar.gz",
-                    "sha256": "bed0e74f9adbbf3a36c1fb50eddecb519538b0badeb546d85b594829f7f7075d"
+                    "url": "https://codeberg.org/soundtouch/soundtouch/archive/2.3.2.tar.gz",
+                    "sha256": "ed714f84a3e748de87b24f385ec69d3bdc51ca47b7f4710d2048b84b2761e7ff"
+                },
+                {
+                    "type": "patch",
+                    "path": "disable-fast-math-as-it-affects-the-entire-process.patch"
                 }
+
             ]
         },
         {
@@ -234,8 +240,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/FFmpeg/FFmpeg.git",
-                    "tag": "n4.1.4",
-                    "commit": "9d06c1f95ebe4f9c2cc05d041dbfd3de52d2518a"
+                    "tag": "n4.1.11",
+                    "commit": "76ee3e41df5157317ee209d3e6cc0829af5f963f"
                 }
             ]
         },
@@ -248,8 +254,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/mstorsjo/fdk-aac.git",
-                    "tag": "v0.1.6",
-                    "commit": "a30bfced6b6d6d976c728552d247cb30dd86e238"
+                    "tag": "v2.0.2",
+                    "commit": "801f67f671929311e0c9952c5f92d6e147c7b003"
                 }
             ]
         },
@@ -327,25 +333,14 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/opencv/opencv/archive/3.4.8.tar.gz",
-                    "sha256": "f0901648a1db3dc3af30e65082665921dbe998673137380450bdd91e8251b567"
+                    "url": "https://github.com/opencv/opencv/archive/4.8.0.tar.gz",
+                    "sha256": "cbf47ecc336d2bff36b0dcd7d6c179a9bb59e805136af6b9670ca944aef889bd"
                 },
                 {
                     "type": "archive",
-                    "url": "https://github.com/opencv/opencv_contrib/archive/3.4.8.tar.gz",
-                    "sha256": "f7daa4136a73261566e4b372d0a5186ce46bb5dbdf6d1bcce0d373a1bb887f83",
+                    "url": "https://github.com/opencv/opencv_contrib/archive/4.8.0.tar.gz",
+                    "sha256": "b4aef0f25a22edcd7305df830fa926ca304ea9db65de6ccd02f6cfa5f3357dbb",
                     "dest": "contrib"
-                },
-                {
-                    "type": "patch",
-                    "path": "opencv-werror.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "opencv-16369.patch",
-                    "only-arches": [
-                        "aarch64"
-                    ]
                 }
             ]
         },
@@ -377,14 +372,14 @@
             "sources": [
                 {
                     "type": "git",
-                    "tag": "1.20.6",
+                    "tag": "1.22.5",
                     "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git",
-                    "commit": "b7d3037cca2fe72c5b7daab5e0617e61ae013dcc"
+                    "commit": "bf6ce1d64a0697e7910826147b48f8f658366a5a"
                 },
                 {
                     "type": "git",
                     "url": "https://gitlab.freedesktop.org/gstreamer/orc.git",
-                    "commit": "887392103956a8733a750c4442e2664d5c26527d",
+                    "commit": "7d5bbada3f1c6cf34182abccf47a34d79b83fa97",
                     "dest": "subprojects/orc"
                 }
             ]
@@ -396,8 +391,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/libpeas.git",
-                    "tag": "libpeas-1.28.0",
-                    "commit": "04a873b2dd71228eb3cf0fe0510cd0ea8721f43b"
+                    "tag": "libpeas-1.36.0",
+                    "commit": "7f245fa5158204621c3469756a951b68a651c4fe"
                 }
             ]
         },
