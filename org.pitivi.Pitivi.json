@@ -412,8 +412,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/pitivi.git",
-                    "tag": "2022.06.0",
-                    "commit": "7cbe1d9bd39506e139a7747ea3896bb121d0773d"
+                    "tag": "2023.03.0",
+                    "commit": "06414db5ab7d6e0e5f1b174183b376c60c6e642d"
                 }
             ]
         }
