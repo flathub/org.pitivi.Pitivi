@@ -18,7 +18,6 @@
         "--filesystem=host",
         "--device=dri"
     ],
-    "copy-icon": true,
     "build-options": {
         "env": {
             "GST_PLUGIN_SYSTEM_PATH": "/app/lib/gstreamer-1.0/:/app/lib/codecs/lib/gstreamer-1.0/",
@@ -401,6 +400,7 @@
             "buildsystem": "meson",
             "builddir": true,
             "post-install": [
+                "mv $FLATPAK_DEST/share/icons/hicolor/scalable/mimetypes/{,$FLATPAK_ID.}text-x-xges.svg",
                 "install -d /app/extensions/Plugins"
             ],
             "sources": [
@@ -409,6 +409,10 @@
                     "url": "https://gitlab.gnome.org/GNOME/pitivi.git",
                     "tag": "2023.03.0",
                     "commit": "06414db5ab7d6e0e5f1b174183b376c60c6e642d"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/pitivi-mime-iconnames.patch"
                 }
             ]
         }
