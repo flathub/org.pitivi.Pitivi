@@ -4,6 +4,10 @@
     "runtime-version": "44",
     "sdk": "org.gnome.Sdk",
     "command": "pitivi",
+    "rename-mime-icons": [
+        "text-x-xges"
+    ],
+    "rename-mime-file": "org.pitivi.Pitivi-mime.xml",
     "finish-args": [
         "--socket=fallback-x11",
         "--share=ipc",
@@ -400,7 +404,6 @@
             "buildsystem": "meson",
             "builddir": true,
             "post-install": [
-                "mv $FLATPAK_DEST/share/icons/hicolor/scalable/mimetypes/{,$FLATPAK_ID.}text-x-xges.svg",
                 "install -d /app/extensions/Plugins"
             ],
             "sources": [
@@ -409,10 +412,6 @@
                     "url": "https://gitlab.gnome.org/GNOME/pitivi.git",
                     "tag": "2023.03.0",
                     "commit": "06414db5ab7d6e0e5f1b174183b376c60c6e642d"
-                },
-                {
-                    "type": "patch",
-                    "path": "patches/pitivi-mime-iconnames.patch"
                 }
             ]
         }
