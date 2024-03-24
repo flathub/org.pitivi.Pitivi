@@ -150,7 +150,7 @@
                 {
                     "type": "archive",
                     "url": "https://codeberg.org/soundtouch/soundtouch/archive/2.3.2.tar.gz",
-                    "sha256": "714c8626001bb3ef291a9af9eadc0f7b382a0b23506efebc516b63b170b4da56"
+                    "sha256": "ed714f84a3e748de87b24f385ec69d3bdc51ca47b7f4710d2048b84b2761e7ff"
                 },
                 {
                     "type": "patch",
