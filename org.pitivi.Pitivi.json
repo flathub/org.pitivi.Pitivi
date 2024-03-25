@@ -1,7 +1,7 @@
 {
     "app-id": "org.pitivi.Pitivi",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "44",
+    "runtime-version": "45",
     "sdk": "org.gnome.Sdk",
     "command": "pitivi",
     "rename-mime-icons": [
@@ -33,8 +33,9 @@
     },
     "cleanup": [
         "/include",
-        "/lib/*.a",
-        "/lib/*.la",
+        "*.a",
+        "*.la",
+	"/lib/cmake",
         "/lib/gstreamer-1.0/include",
         "/lib/pkgconfig",
         "/share/man"
@@ -48,7 +49,7 @@
         },
         "org.freedesktop.LinuxAudio.Plugins": {
             "directory": "extensions/Plugins",
-            "version": "22.08",
+            "version": "23.08",
             "add-ld-path": "lib",
             "merge-dirs": "ladspa;lv2",
             "subdirectories": true,
@@ -56,6 +57,29 @@
         }
     },
     "modules": [
+        {
+            "name": "openblas",
+            "no-autogen": true,
+            "make-args": [
+                "DYNAMIC_ARCH=1",
+                "FC=gfortran",
+                "NO_CBLAS=1",
+                "NO_LAPACKE=1",
+                "USE_OPENMP=0"
+            ],
+            "make-install-args": [
+                "PREFIX=/app"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/xianyi/OpenBLAS/archive/v0.3.24.tar.gz",
+                    "sha256": "ceadc5065da97bd92404cac7254da66cc6eb192679cf1002098688978d4d5132"
+                }
+            ]
+        },
+        "python3-meson-python.json",
+        "python3-scipy.json",
         "python3-matplotlib.json",
         {
             "name": "lapack",
@@ -245,6 +269,10 @@
                     "url": "https://github.com/FFmpeg/FFmpeg.git",
                     "tag": "n4.1.11",
                     "commit": "76ee3e41df5157317ee209d3e6cc0829af5f963f"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/ffmpeg-as-fix.patch"
                 }
             ]
         },
@@ -360,6 +388,7 @@
                 "-Dbad=enabled",
                 "-Dugly=enabled",
                 "-Dvaapi=enabled",
+                "-Dpython=enabled",
                 "-Ddoc=disabled"
             ],
             "post-install": [
@@ -412,6 +441,10 @@
                     "url": "https://gitlab.gnome.org/GNOME/pitivi.git",
                     "tag": "2023.03.0",
                     "commit": "06414db5ab7d6e0e5f1b174183b376c60c6e642d"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/pitivi-appdata.patch"
                 }
             ]
         }
