@@ -4,73 +4,6 @@
     "build-commands": [],
     "modules": [
         {
-            "//": "scipy requires pybind11 to be installed, otherwise: Error: pybind11 must be installed before running the build.",
-            "name": "python-pybind11",
-            "buildsystem": "simple",
-            "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pybind11\" --no-build-isolation"
-            ],
-            "sources": [
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/fd/24/efc9e62aa1baa48622028c59ae2c70fa134801e8acbdf30e5b594fe5a360/pybind11-2.9.2-py2.py3-none-any.whl",
-                    "sha256": "20f56674da31c96bca7569b91e60f2bd30d693f0728541412ec927574f7bc9df"
-                }
-            ]
-        },
-        {
-            "//": "scipy requires pythran to be installed: scipy/interpolate/setup.py: from pythran.dist import PythranExtension",
-            "name": "python-pythran",
-            "buildsystem": "simple",
-            "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pythran\" --no-build-isolation"
-            ],
-            "sources": [
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/a3/58/35da89ee790598a0700ea49b2a66594140f44dec458c07e8e3d4979137fc/ply-3.11-py2.py3-none-any.whl",
-                    "sha256": "096f9b8350b65ebd2fd1346b12452efe5b9607f7482813ffca50c22722a807ce"
-                },
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/5f/1c/b59500a88c5c3d9d601c5ca62b9df5e0964764472faed82a182958a922c5/gast-0.5.3-py3-none-any.whl",
-                    "sha256": "211aac1e58c167b25d3504998f2db694454a24bb1fb1225bce99420166f21d6a"
-                },
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/cc/4a/af3f1b3d00efd47309b7a0e28351e06453727fa55d9b3a45fd4b91031a63/beniget-0.4.1-py3-none-any.whl",
-                    "sha256": "cb061256631313f9d06031b824f7f403baecaf609b2d3d14d43f23356cf143f2"
-                },
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/ae/5a/2fc283c873b9d3f5a612238165756b9e75ac345250f6c1511e0c60c181b5/pythran-0.11.0-py3-none-any.whl",
-                    "sha256": "8fea162e6096c6a3d45613a9a5389db739bf78805e713f853c9fcc7113ab9369"
-                }
-            ]
-        },
-        {
-            "name": "python3-scipy",
-            "buildsystem": "simple",
-            "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"scipy\" --no-build-isolation"
-            ],
-            "build-options": {
-                "env": {
-                    "ATLAS": "None",
-                    "BLAS": "/app/lib",
-                    "LAPACK": "/app/lib",
-                    "LDFLAGS": "-shared"
-                }
-            },
-            "sources": [
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/26/b5/9330f004b9a3b2b6a31f59f46f1617ce9ca15c0e7fe64288c20385a05c9d/scipy-1.8.1.tar.gz",
-                    "sha256": "9e3fb1b0e896f14a85aa9a28d5f755daaeeb54c897b746df7a55ccb02b340f33"
-                }
-            ]
-        },
-        {
             "name": "python3-librosa",
             "buildsystem": "simple",
             "build-commands": [
@@ -119,20 +52,20 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/90/fc/313c916fb49495ac7c1f9ab213cd3d3285342691b860a2810a51c6c1a10e/llvmlite-0.38.1.tar.gz",
-                    "sha256": "0622a86301fcf81cc50d7ed5b4bebe992c030580d413a8443b328ed4f4d82561"
+                    "url": "https://files.pythonhosted.org/packages/3b/ff/ad02ffee7d519615726fc46c99a37e697f2b4b1fb7e5d3cd6fb465d4f49f/llvmlite-0.42.0.tar.gz",
+                    "sha256": "f92b09243c0cc3f457da8b983f67bd8e1295d0f5b3746c7a1861d7a99403854a"
                 },
                 {
                     "type": "file",
                     "only-arches": [ "x86_64" ],
-                    "url": "https://files.pythonhosted.org/packages/90/1f/e6a7c0f290d9888748d7719e50f24764d7be60ac1df090a4e39da73b7154/llvmlite-0.38.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
-                    "sha256": "0c0adce1793d66d009c554809f27baeb6258bf13f6fbaa12eff7443500caec25"
+                    "url": "https://files.pythonhosted.org/packages/a4/1f/300788b5eab99aec872ed2f3647386d7d7f7bbf4f99c91e9e023b404ff7f/llvmlite-0.42.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+                    "sha256": "c5bece0cdf77f22379f19b1959ccd7aee518afa4afbd3656c6365865f84903f9"
                 },
                 {
                     "type": "file",
                     "only-arches": [ "aarch64" ],
-                    "url": "https://files.pythonhosted.org/packages/b4/3b/070ff0a6f629b00024497fe8a34baa3bb0abb0e74fe29b27e5d082479893/llvmlite-0.38.1-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
-                    "sha256": "633c9026eb43b9903cc4ffbc1c7d5293b2e3ad95d06fa9eab0f6ce6ff6ea15b3"
+                    "url": "https://files.pythonhosted.org/packages/e1/0b/4f9c7479137280bf868ee6f9bfe4540cd5f5d5522ecf72662e9ad78a153e/llvmlite-0.42.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+                    "sha256": "bb3975787f13eb97629052edb5017f6c170eebc1c14a0433e8089e5db43bcce6"
                 },
                 {
                     "type": "file",
@@ -171,8 +104,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/39/dd/7109030bb584e8f0c4c8796bfd39fc5811cb77368a8c5db335f99c1fec9e/numba-0.55.2.tar.gz",
-                    "sha256": "e428d9e11d9ba592849ccc9f7a009003eb7d30612007e365afe743ce7118c6f4"
+                    "url": "https://files.pythonhosted.org/packages/bb/84/468592513867604800592b58d106f5e7e6ef61de226b59c1e9313917fbbb/numba-0.59.1.tar.gz",
+                    "sha256": "76f69132b96028d2774ed20415e8c528a34e3299a40581bae178f0994a2f370b"
                 },
                 {
                     "type": "file",
