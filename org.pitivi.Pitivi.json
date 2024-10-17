@@ -1,7 +1,7 @@
 {
     "app-id": "org.pitivi.Pitivi",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "45",
+    "runtime-version": "46",
     "sdk": "org.gnome.Sdk",
     "command": "pitivi",
     "rename-mime-icons": [
