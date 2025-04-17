@@ -17,6 +17,40 @@
                 },
                 {
                     "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/45/6b/44f7f8f1e110027cf88956b59f2fad776cca7e1704396d043f89effd3a0e/typing_extensions-4.1.1-py3-none-any.whl",
+                    "sha256": "21c85e0fe4b9a155d0799430b0ad741cdce7e359660ccbd8b530613e8df88ce2"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/bc/bf/58dbe1f382ecac2c0571c43b6e95028b14e159d67d75e49a00c26ef63d8f/lazy_loader-0.1-py3-none-any.whl",
+                    "sha256": "623bd4831a40ce659d74472af40a58d016f2a5a047685409affbc2ba5c044641"
+                },
+		{
+		    "type": "file",
+                    "only-arches": [ "x86_64" ],
+		    "url": "https://files.pythonhosted.org/packages/04/2a/c833a8503be9030083f0469e7a3c74d3622a3b4eae676c3934d3ccc01036/msgpack-1.0.8-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+		    "sha256": "8db8e423192303ed77cff4dce3a4b88dbfaf43979d280181558af5e2c3c71afc"
+		},
+		{
+		    "type": "file",
+                    "only-arches": [ "aarch64" ],
+		    "url": "https://files.pythonhosted.org/packages/54/f7/84828d0c6be6b7f0770777f1a7b1f76f3a78e8b6afb5e4e9c1c9350242be/msgpack-1.0.8-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+		    "sha256": "0726c282d188e204281ebd8de31724b7d749adebc086873a59efb8cf7ae27df3"
+		},
+		{
+		    "type": "file",
+                    "only-arches": [ "x86_64" ],
+		    "url": "https://files.pythonhosted.org/packages/1b/51/54a6bbb3c0e80b7f59a7e30a4643fef18f43b75ce30512a6baf4afb8d490/soxr-0.3.7-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+		    "sha256": "ea663b76f2b0ec1576b8a43aef317aec080abc0a67a4015fcd9f3407039f260a"
+		},
+		{
+		    "type": "file",
+                    "only-arches": [ "aarch64" ],
+		    "url": "https://files.pythonhosted.org/packages/7a/1a/1287a8d6a470d1ce5084269ec7ac17dfc8eeb3e48bec3bd0be0eefed8ed4/soxr-0.3.7-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+		    "sha256": "48acdfbcf870ab54f645b1cfd641bce92c1e3a67346c3bf0f6c0ad2873c1dd35"
+		},
+                {
+                    "type": "file",
                     "url": "https://files.pythonhosted.org/packages/ec/03/062e6444ce4baf1eac17a6a0ebfe36bb1ad05e1df0e20b110de59c278498/urllib3-1.26.9-py2.py3-none-any.whl",
                     "sha256": "44ece4d53fb1706f667c9bd1c648f5469a2ec925fcf3a776667042d645472c14"
                 },
@@ -52,20 +86,15 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/3b/ff/ad02ffee7d519615726fc46c99a37e697f2b4b1fb7e5d3cd6fb465d4f49f/llvmlite-0.42.0.tar.gz",
-                    "sha256": "f92b09243c0cc3f457da8b983f67bd8e1295d0f5b3746c7a1861d7a99403854a"
-                },
-                {
-                    "type": "file",
                     "only-arches": [ "x86_64" ],
-                    "url": "https://files.pythonhosted.org/packages/a4/1f/300788b5eab99aec872ed2f3647386d7d7f7bbf4f99c91e9e023b404ff7f/llvmlite-0.42.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
-                    "sha256": "c5bece0cdf77f22379f19b1959ccd7aee518afa4afbd3656c6365865f84903f9"
+                    "url": "https://files.pythonhosted.org/packages/62/af/c3df8a3f26c3cff7730ab1cb7c7a4c899f8c4fb4acd9020150d1599575ac/llvmlite-0.42.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+                    "sha256": "d47494552559e00d81bfb836cf1c4d5a5062e54102cc5767d5aa1e77ccd2505c"
                 },
                 {
                     "type": "file",
                     "only-arches": [ "aarch64" ],
-                    "url": "https://files.pythonhosted.org/packages/e1/0b/4f9c7479137280bf868ee6f9bfe4540cd5f5d5522ecf72662e9ad78a153e/llvmlite-0.42.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
-                    "sha256": "bb3975787f13eb97629052edb5017f6c170eebc1c14a0433e8089e5db43bcce6"
+                    "url": "https://files.pythonhosted.org/packages/9a/c5/7a1716343ad90204fde896bc052707bc6946cc32a52616d141e494d518a3/llvmlite-0.42.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+                    "sha256": "ebe66a86dc44634b59a3bc860c7b20d26d9aaffcd30364ebe8ba79161a9121f4"
                 },
                 {
                     "type": "file",
@@ -79,18 +108,25 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/eb/f2/3cbbbf3b96fb9fa91582c438b574cff3f45b29c772f94c400e2c99ef5db9/SoundFile-0.10.3.post1-py2.py3-none-any.whl",
-                    "sha256": "2d17e0a6fc2af0d6c1d868bafa5ec80aae6e186a97fec8db07ad6af29842fbc7"
+                    "url": "https://files.pythonhosted.org/packages/04/bc/cd845c2dbb4d257c744cd58a5bcdd9f6d235ca317e7e22e49564ec88dcd9/soundfile-0.12.1-py2.py3-none-any.whl",
+                    "sha256": "828a79c2e75abab5359f780c81dccd4953c45a2c4cd4f05ba3e233ddf984b882"
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/41/11/e931951f048908ceaf2423db48ca6ad10e0b818c2960a3bc2dacb4fa4c1d/scikit-learn-1.1.1.tar.gz",
-                    "sha256": "3e77b71e8e644f86c8b5be7f1c285ef597de4c384961389ee3e9ca36c445b256"
+                    "only-arches": [ "x86_64" ],
+                    "url": "https://files.pythonhosted.org/packages/5d/b7/ee35904c07a0666784349529412fbb9814a56382b650d30fd9d6be5e5054/scikit_learn-1.3.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+                    "sha256": "5b2de18d86f630d68fe1f87af690d451388bb186480afc719e5f770590c2ef6c"
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/79/75/e22272b9c2185fc8f3af6ce37229708b45e8b855fd4bc38b4d6b040fff65/resampy-0.2.2.tar.gz",
-                    "sha256": "62af020d8a6674d8117f62320ce9470437bb1d738a5d06cd55591b69b463929e"
+                    "only-arches": [ "aarch64" ],
+                    "url": "https://files.pythonhosted.org/packages/e5/a7/6f4ae76f72ae9de162b97acbf1f53acbe404c555f968d13da21e4112a002/scikit_learn-1.3.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+                    "sha256": "cb06f8dce3f5ddc5dee1715a9b9f19f20d295bed8e3cd4fa51e1d050347de525"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/59/00/2aba99630a823efa086b65f04b7025264b0dc924cae664dd897e6ba1f3d6/resampy-0.3.0-py3-none-any.whl",
+                    "sha256": "19aab417ac8c7dee0050def09e0ac8d098a6afa910603e9cae25bd0ef8b805a4"
                 },
                 {
                     "type": "file",
@@ -109,8 +145,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/3e/d5/0163eb0cfa0b673aa4fe1cd3ea9d8a81ea0f32e50807b0c295871e4aab2e/joblib-1.1.0-py2.py3-none-any.whl",
-                    "sha256": "f21f109b3c7ff9d95f8387f752d0d9c34a02aa2f7060c2135f465da0e5160ff6"
+                    "url": "https://files.pythonhosted.org/packages/7c/91/d3ba0401e62d7e42816bc7d97b82d19c95c164b3e149a87c0a1c026a735e/joblib-1.1.1-py2.py3-none-any.whl",
+                    "sha256": "f9d6c3cdf2a7778e9058e10e9dba028e47771a1a355e5768f46704bf05342eba"
                 },
                 {
                     "type": "file",
@@ -119,13 +155,13 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/b3/d1/e324634c5867a668774d6fe233a83228da4ba16521e19059c15df899737d/audioread-2.1.9.tar.gz",
-                    "sha256": "a3480e42056c8e80a8192a54f6729a280ef66d27782ee11cbd63e9d4d1523089"
+                    "url": "https://files.pythonhosted.org/packages/57/8d/30aa32745af16af0a9a650115fbe81bde7c610ed5c21b381fca0196f3a7f/audioread-3.0.1-py3-none-any.whl",
+                    "sha256": "4cdce70b8adc0da0a3c9e0d85fb10b3ace30fbdf8d1670fd443929b61d117c33"
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/e4/1c/23ef2fd02913d65d43dc7516fc829af709314a66c6f0bdc2e361fdcecc2d/librosa-0.9.2-py3-none-any.whl",
-                    "sha256": "322a813e6d37af9fbc369e6a637dcf5fdc5c6925ce806a0d27c68de61a81350f"
+                    "url": "https://files.pythonhosted.org/packages/b5/ba/c63c5786dfee4c3417094c4b00966e61e4a63efecee22cb7b4c0387dda83/librosa-0.11.0-py3-none-any.whl",
+                    "sha256": "0b6415c4fd68bff4c29288abe67c6d80b587e0e1e2cfb0aad23e4559504a7fa1"
                 }
             ]
         }
