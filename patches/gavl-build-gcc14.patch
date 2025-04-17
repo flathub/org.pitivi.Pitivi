@@ -1,0 +1,12 @@
+diff --git a/src/fill_test.c b/src/fill_test.c
+index 1d362be..e7c981e 100644
+--- a/src/fill_test.c
++++ b/src/fill_test.c
+@@ -22,6 +22,7 @@
+ #include <gavl.h>
+ //#include "colorspace.h" // Common routines
+ #include <stdio.h>
++#include <string.h>
+ #include <png.h>
+ 
+ static void

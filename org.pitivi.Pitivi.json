@@ -1,7 +1,7 @@
 {
     "app-id": "org.pitivi.Pitivi",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "46",
+    "runtime-version": "47",
     "sdk": "org.gnome.Sdk",
     "command": "pitivi",
     "rename-mime-icons": [
@@ -28,8 +28,8 @@
             "FREI0R_PATH": "/app/lib/frei0r-1/",
             "PYTHON": "python3"
         },
-        "append-ld-library-path": "/app/lib/codecs/lib",
-        "ldflags": "-L/app/lib/codecs/lib"
+        "ldflags": "-L/app/lib/codecs/lib",
+        "append-ld-library-path": "/app/lib/codecs/lib"
     },
     "cleanup": [
         "/include",
@@ -49,7 +49,7 @@
         },
         "org.freedesktop.LinuxAudio.Plugins": {
             "directory": "extensions/Plugins",
-            "version": "23.08",
+            "version": "24.08",
             "add-ld-path": "lib",
             "merge-dirs": "ladspa;lv2",
             "subdirectories": true,
@@ -80,6 +80,7 @@
         },
         "python3-meson-python.json",
         "python3-scipy.json",
+        "python3-cppy.json",
         "python3-matplotlib.json",
         {
             "name": "lapack",
@@ -136,6 +137,15 @@
         {
             "name": "gavl",
             "rm-configure": true,
+            "build-options": {
+                "arch": {
+                    "x86_64": {
+                        "config-opts": [
+                            "--with-cpuflags=-msse -msse2"
+                        ]
+                    }
+                }
+            },
             "config-opts": [
                 "--without-doxygen"
             ],
@@ -150,7 +160,10 @@
                 },
                 {
                     "type": "patch",
-                    "path": "gavl/ubuntu_armel_ftbfs.patch"
+                    "paths": [
+			"patches/gavl-ubuntu_armel_ftbfs.patch",
+			"patches/gavl-build-gcc14.patch"
+		    ]
                 },
                 {
                     "type": "script",
@@ -182,7 +195,7 @@
                 },
                 {
                     "type": "patch",
-                    "path": "disable-fast-math-as-it-affects-the-entire-process.patch"
+                    "path": "patches/soundtouch-disable-fast-math-as-it-affects-the-entire-process.patch"
                 }
 
             ]
@@ -202,7 +215,7 @@
         },
         {
             "name": "x265",
-            "buildsystem": "cmake",
+            "buildsystem": "cmake-ninja",
             "build-options": {
                 "arch": {
                     "aarch64": {
@@ -221,6 +234,9 @@
         },
         {
             "name": "ffmpeg",
+            "build-options": {
+                "cflags": "-fpermissive"
+            },
             "config-opts": [
                 "--disable-static",
                 "--enable-shared",
@@ -292,7 +308,7 @@
         },
         {
             "name": "opencv",
-            "buildsystem": "cmake",
+            "buildsystem": "cmake-ninja",
             "builddir": true,
             "config-opts": [
                 "-DCMAKE_BUILD_TYPE=Release",
@@ -404,14 +420,15 @@
             "sources": [
                 {
                     "type": "git",
-                    "tag": "1.22.5",
+                    "tag": "1.22.10",
                     "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git",
-                    "commit": "bf6ce1d64a0697e7910826147b48f8f658366a5a"
+                    "commit": "29d6413c3f4ed9656ba161ef500823c47eb59004"
                 },
                 {
                     "type": "git",
                     "url": "https://gitlab.freedesktop.org/gstreamer/orc.git",
                     "commit": "7d5bbada3f1c6cf34182abccf47a34d79b83fa97",
+                    "tag": "0.4.34",
                     "dest": "subprojects/orc"
                 }
             ]
