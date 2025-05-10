@@ -1,7 +1,7 @@
 {
     "app-id": "org.pitivi.Pitivi",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "47",
+    "runtime-version": "48",
     "sdk": "org.gnome.Sdk",
     "command": "pitivi",
     "rename-mime-icons": [
@@ -430,6 +430,20 @@
                     "commit": "7d5bbada3f1c6cf34182abccf47a34d79b83fa97",
                     "tag": "0.4.34",
                     "dest": "subprojects/orc"
+                }
+            ]
+        },
+        {
+            "name": "pygobject",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dtests=false"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/pygobject/3.50/pygobject-3.50.0.tar.xz",
+                    "sha256": "8d836e75b5a881d457ee1622cae4a32bcdba28a0ba562193adb3bbb472472212"
                 }
             ]
         },
