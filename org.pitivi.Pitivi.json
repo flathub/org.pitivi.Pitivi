@@ -420,15 +420,15 @@
             "sources": [
                 {
                     "type": "git",
-                    "tag": "1.22.10",
+                    "tag": "1.26.4",
                     "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git",
-                    "commit": "29d6413c3f4ed9656ba161ef500823c47eb59004"
+                    "commit": "b079b40877776aef8e2d3bf1e3892433ba200163"
                 },
                 {
                     "type": "git",
                     "url": "https://gitlab.freedesktop.org/gstreamer/orc.git",
-                    "commit": "7d5bbada3f1c6cf34182abccf47a34d79b83fa97",
-                    "tag": "0.4.34",
+                    "commit": "96dfe82ae431d8e4e06b6092171e231d693a73b5",
+                    "tag": "0.4.41",
                     "dest": "subprojects/orc"
                 }
             ]
