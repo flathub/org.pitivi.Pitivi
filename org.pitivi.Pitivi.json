@@ -3,6 +3,9 @@
     "runtime": "org.gnome.Platform",
     "runtime-version": "48",
     "sdk": "org.gnome.Sdk",
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.llvm14"
+    ],
     "command": "pitivi",
     "rename-mime-icons": [
         "text-x-xges"
@@ -23,10 +26,13 @@
         "--device=dri"
     ],
     "build-options": {
+        "prepend-path": "/usr/lib/sdk/llvm14/bin",
+        "prepend-ld-library-path": "/usr/lib/sdk/llvm14/lib",
         "env": {
             "GST_PLUGIN_SYSTEM_PATH": "/app/lib/gstreamer-1.0/:/app/lib/codecs/lib/gstreamer-1.0/",
             "FREI0R_PATH": "/app/lib/frei0r-1/",
-            "PYTHON": "python3"
+            "PYTHON": "python3",
+            "LLVM_CONFIG": "/usr/lib/sdk/llvm14/bin/llvm-config"
         },
         "ldflags": "-L/app/lib/codecs/lib",
         "append-ld-library-path": "/app/lib/codecs/lib"
@@ -78,10 +84,23 @@
                 }
             ]
         },
+        {
+            "name": "qhull",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DBUILD_SHARED_LIBS=ON"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/qhull/qhull/archive/v8.0.2/qhull-8.0.2.tar.gz",
+                    "sha256": "8774e9a12c70b0180b95d6b0b563c5aa4bea8d5960c15e18ae3b6d2521d64f8b"
+                }
+            ]
+        },
         "python3-meson-python.json",
-        "python3-scipy.json",
-        "python3-cppy.json",
-        "python3-matplotlib.json",
+        "python3-modules.json",
         {
             "name": "lapack",
             "buildsystem": "cmake-ninja",
@@ -104,7 +123,6 @@
                 }
             ]
         },
-        "python3-librosa.json",
         "shared-modules/libcanberra/libcanberra.json",
         {
             "name": "gsound",
