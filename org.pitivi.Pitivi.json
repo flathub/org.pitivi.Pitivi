@@ -78,10 +78,23 @@
                 }
             ]
         },
+        {
+            "name": "qhull",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DBUILD_SHARED_LIBS=ON"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/qhull/qhull/archive/v8.0.2/qhull-8.0.2.tar.gz",
+                    "sha256": "8774e9a12c70b0180b95d6b0b563c5aa4bea8d5960c15e18ae3b6d2521d64f8b"
+                }
+            ]
+        },
         "python3-meson-python.json",
-        "python3-scipy.json",
-        "python3-cppy.json",
-        "python3-matplotlib.json",
+        "python3-modules.json",
         {
             "name": "lapack",
             "buildsystem": "cmake-ninja",
@@ -104,7 +117,6 @@
                 }
             ]
         },
-        "python3-librosa.json",
         "shared-modules/libcanberra/libcanberra.json",
         {
             "name": "gsound",
@@ -420,15 +432,15 @@
             "sources": [
                 {
                     "type": "git",
-                    "tag": "1.22.10",
+                    "tag": "1.26.4",
                     "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git",
-                    "commit": "29d6413c3f4ed9656ba161ef500823c47eb59004"
+                    "commit": "b079b40877776aef8e2d3bf1e3892433ba200163"
                 },
                 {
                     "type": "git",
                     "url": "https://gitlab.freedesktop.org/gstreamer/orc.git",
-                    "commit": "7d5bbada3f1c6cf34182abccf47a34d79b83fa97",
-                    "tag": "0.4.34",
+                    "commit": "96dfe82ae431d8e4e06b6092171e231d693a73b5",
+                    "tag": "0.4.41",
                     "dest": "subprojects/orc"
                 }
             ]

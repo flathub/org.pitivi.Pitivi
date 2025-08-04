@@ -7,18 +7,18 @@
     "sources": [
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/1f/60/b10b11ab470a690d5777310d6cfd1c9bdbbb0a1313a78c34a1e82e0b9d27/meson_python-0.15.0-py3-none-any.whl",
-            "sha256": "3ae38253ff02b2e947a05e362a2eaf5a9a09d133c5666b4123399ee5fbf2e591"
+            "url": "https://files.pythonhosted.org/packages/28/58/66db620a8a7ccb32633de9f403fe49f1b63c68ca94e5c340ec5cceeb9821/meson_python-0.18.0-py3-none-any.whl",
+            "sha256": "3b0fe051551cc238f5febb873247c0949cd60ded556efa130aa57021804868e2"
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/49/df/1fceb2f8900f8639e278b056416d49134fb8d84c5942ffaa01ad34782422/packaging-24.0-py3-none-any.whl",
-            "sha256": "2ddfb553fdf02fb784c234c7ba6ccc288296ceabec964ad2eae3777778130bc5"
+            "url": "https://files.pythonhosted.org/packages/20/12/38679034af332785aac8774540895e234f4d07f7545804097de4b666afd8/packaging-25.0-py3-none-any.whl",
+            "sha256": "29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484"
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/c4/cb/4678dfd70cd2f2d8969e571cdc1bb1e9293c698f8d1cf428fadcf48d6e9f/pyproject_metadata-0.7.1-py3-none-any.whl",
-            "sha256": "28691fbb36266a819ec56c9fa1ecaf36f879d6944dfde5411e87fc4ff793aa60"
+            "url": "https://files.pythonhosted.org/packages/7e/b1/8e63033b259e0a4e40dd1ec4a9fee17718016845048b43a36ec67d62e6fe/pyproject_metadata-0.9.1-py3-none-any.whl",
+            "sha256": "ee5efde548c3ed9b75a354fc319d5afd25e9585fa918a34f62f904cc731973ad"
         }
     ]
 }
