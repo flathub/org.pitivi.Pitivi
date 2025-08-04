@@ -3,9 +3,6 @@
     "runtime": "org.gnome.Platform",
     "runtime-version": "48",
     "sdk": "org.gnome.Sdk",
-    "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.llvm14"
-    ],
     "command": "pitivi",
     "rename-mime-icons": [
         "text-x-xges"
@@ -26,13 +23,10 @@
         "--device=dri"
     ],
     "build-options": {
-        "prepend-path": "/usr/lib/sdk/llvm14/bin",
-        "prepend-ld-library-path": "/usr/lib/sdk/llvm14/lib",
         "env": {
             "GST_PLUGIN_SYSTEM_PATH": "/app/lib/gstreamer-1.0/:/app/lib/codecs/lib/gstreamer-1.0/",
             "FREI0R_PATH": "/app/lib/frei0r-1/",
-            "PYTHON": "python3",
-            "LLVM_CONFIG": "/usr/lib/sdk/llvm14/bin/llvm-config"
+            "PYTHON": "python3"
         },
         "ldflags": "-L/app/lib/codecs/lib",
         "append-ld-library-path": "/app/lib/codecs/lib"

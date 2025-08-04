@@ -9,8 +9,6 @@
         "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"cppy\" --no-build-isolation",
         "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"matplotlib\" --no-build-isolation --config-settings=setup-args='-Dsystem-freetype=true' --config-settings=setup-args='-Dsystem-qhull=true'",
         "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"scipy\" --no-build-isolation",
-        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"llvmlite\" --no-build-isolation",
-        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"numba\" --no-build-isolation",
         "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"librosa\" --no-build-isolation"
     ],
     "sources": [
@@ -103,16 +101,6 @@
             "type": "file",
             "url": "https://files.pythonhosted.org/packages/f5/4a/b927028464795439faec8eaf0b03b011005c487bb2d07409f28bf30879c4/scipy-1.16.1.tar.gz",
             "sha256": "44c76f9e8b6e8e488a586190ab38016e4ed2f8a038af7cd3defa903c0a2238b3"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/source/l/llvmlite/llvmlite-0.42.0.tar.gz",
-            "sha256": "f92b09243c0cc3f457da8b983f67bd8e1295d0f5b3746c7a1861d7a99403854a"
-        },
-        {
-            "type": "file",
-            "url": "https://files.pythonhosted.org/packages/source/n/numba/numba-0.61.2.tar.gz",
-            "sha256": "8750ee147940a6637b80ecf7f95062185ad8726c8c28a2295b8ec1160a196f7d"
         },
         {
             "type": "file",
