@@ -1,8 +1,16 @@
 diff --git a/data/org.pitivi.Pitivi.appdata.xml.in b/data/org.pitivi.Pitivi.appdata.xml.in
-index eb2fb10..33ad0f4 100644
+index eb2fb10..9dc3df1 100644
 --- a/data/org.pitivi.Pitivi.appdata.xml.in
 +++ b/data/org.pitivi.Pitivi.appdata.xml.in
-@@ -36,7 +36,6 @@
+@@ -22,6 +22,7 @@
+   <screenshots>
+     <screenshot type="default">
+       <image>https://www.pitivi.org/i/screenshots/2020.05.png</image>
++      <caption>Main Window</caption>
+     </screenshot>
+   </screenshots>
+   <url type="homepage">https://www.pitivi.org</url>
+@@ -36,7 +37,6 @@
      <kudo>Notifications</kudo>
    </kudos>
    <update_contact>pitivi@pitivi.org</update_contact>
@@ -10,3 +18,15 @@ index eb2fb10..33ad0f4 100644
    <translation type="gettext">pitivi</translation>
    <developer_name>The Pitivi Team</developer_name>
  
+@@ -357,10 +357,7 @@
+         </ul>
+       </description>
+     </release>
+-    <release version="0.15.2" date="2012-05-3">
+-      <description>
+-      </description>
+-    </release>
++    <release version="0.15.2" date="2012-05-3" />
+     <release version="0.15.1" date="2012-02-24">
+       <description>
+         <p>This release adds the following features:</p>

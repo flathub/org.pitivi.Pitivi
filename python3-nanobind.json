@@ -1,0 +1,17 @@
+{
+    "name": "python3-nanobind",
+    "buildsystem": "simple",
+    "cleanup": [
+	"*"
+    ],
+    "build-commands": [
+        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"nanobind\" --no-build-isolation"
+    ],
+    "sources": [
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/14/06/cb08965f985a5e1b9cb55ed96337c1f6daaa6b9cbdaeabe6bb3f7a1a11df/nanobind-2.10.2-py3-none-any.whl",
+            "sha256": "6976c1b04b90481d2612b346485a3063818c6faa5077fe9d8bbc9b5fbe29c380"
+        }
+    ]
+}
