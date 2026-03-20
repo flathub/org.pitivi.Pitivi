@@ -27,28 +27,14 @@
                 },
 		{
 		    "type": "file",
-                    "only-arches": [ "x86_64" ],
-		    "url": "https://files.pythonhosted.org/packages/04/2a/c833a8503be9030083f0469e7a3c74d3622a3b4eae676c3934d3ccc01036/msgpack-1.0.8-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
-		    "sha256": "8db8e423192303ed77cff4dce3a4b88dbfaf43979d280181558af5e2c3c71afc"
-		},
-		{
-		    "type": "file",
-                    "only-arches": [ "aarch64" ],
-		    "url": "https://files.pythonhosted.org/packages/54/f7/84828d0c6be6b7f0770777f1a7b1f76f3a78e8b6afb5e4e9c1c9350242be/msgpack-1.0.8-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
-		    "sha256": "0726c282d188e204281ebd8de31724b7d749adebc086873a59efb8cf7ae27df3"
-		},
-		{
-		    "type": "file",
-                    "only-arches": [ "x86_64" ],
-		    "url": "https://files.pythonhosted.org/packages/1b/51/54a6bbb3c0e80b7f59a7e30a4643fef18f43b75ce30512a6baf4afb8d490/soxr-0.3.7-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
-		    "sha256": "ea663b76f2b0ec1576b8a43aef317aec080abc0a67a4015fcd9f3407039f260a"
-		},
-		{
-		    "type": "file",
-                    "only-arches": [ "aarch64" ],
-		    "url": "https://files.pythonhosted.org/packages/7a/1a/1287a8d6a470d1ce5084269ec7ac17dfc8eeb3e48bec3bd0be0eefed8ed4/soxr-0.3.7-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
-		    "sha256": "48acdfbcf870ab54f645b1cfd641bce92c1e3a67346c3bf0f6c0ad2873c1dd35"
-		},
+		    "url": "https://files.pythonhosted.org/packages/08/4c/17adf86a8fbb02c144c7569dc4919483c01a2ac270307e2d59e1ce394087/msgpack-1.0.8.tar.gz",
+		    "sha256": "95c02b0e27e706e48d0e5426d1710ca78e0f0628d6e89d5b5a5b91a5f12274f3"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/fa/9c/e97a426803b2a3666078683f7f50088c34fba950ad74bde365b1b5545919/soxr-0.5.0.tar.gz",
+                    "sha256": "6db338bbb01b73ad31534dd48e1b1eafa767714223f7d403c7633c987bdbd719"
+                },
                 {
                     "type": "file",
                     "url": "https://files.pythonhosted.org/packages/ec/03/062e6444ce4baf1eac17a6a0ebfe36bb1ad05e1df0e20b110de59c278498/urllib3-1.26.9-py2.py3-none-any.whl",
@@ -87,19 +73,19 @@
                 {
                     "type": "file",
                     "only-arches": [ "x86_64" ],
-                    "url": "https://files.pythonhosted.org/packages/62/af/c3df8a3f26c3cff7730ab1cb7c7a4c899f8c4fb4acd9020150d1599575ac/llvmlite-0.42.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
-                    "sha256": "d47494552559e00d81bfb836cf1c4d5a5062e54102cc5767d5aa1e77ccd2505c"
+                    "url": "https://files.pythonhosted.org/packages/d2/1b/656f5a357de7135a3777bd735cc7c9b8f23b4d37465505bd0eaf4be9befe/llvmlite-0.44.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+                    "sha256": "46224058b13c96af1365290bdfebe9a6264ae62fb79b2b55693deed11657a8bf"
                 },
                 {
                     "type": "file",
                     "only-arches": [ "aarch64" ],
-                    "url": "https://files.pythonhosted.org/packages/9a/c5/7a1716343ad90204fde896bc052707bc6946cc32a52616d141e494d518a3/llvmlite-0.42.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
-                    "sha256": "ebe66a86dc44634b59a3bc860c7b20d26d9aaffcd30364ebe8ba79161a9121f4"
+                    "url": "https://files.pythonhosted.org/packages/d8/e1/12c5f20cb9168fb3464a34310411d5ad86e4163c8ff2d14a2b57e5cc6bac/llvmlite-0.44.0-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+                    "sha256": "aa0097052c32bf721a4efc03bd109d335dfa57d9bffb3d4c24cc680711b8b4fc"
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/00/9e/92de7e1217ccc3d5f352ba21e52398372525765b2e0c4530e6eb2ba9282a/cffi-1.15.0.tar.gz",
-                    "sha256": "920f0d66a896c2d99f0adbb391f990a84091179542c205fa53ce5787aff87954"
+                    "url": "https://files.pythonhosted.org/packages/eb/56/b1ba7935a17738ae8453301356628e8147c79dbb825bcbc73dc7401f9846/cffi-2.0.0.tar.gz",
+                    "sha256": "44d1b5909021139fe36001ae048dbdde8214afa20200eda0f64c068cac5d5529"
                 },
                 {
                     "type": "file",
@@ -114,14 +100,14 @@
                 {
                     "type": "file",
                     "only-arches": [ "x86_64" ],
-                    "url": "https://files.pythonhosted.org/packages/5d/b7/ee35904c07a0666784349529412fbb9814a56382b650d30fd9d6be5e5054/scikit_learn-1.3.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
-                    "sha256": "5b2de18d86f630d68fe1f87af690d451388bb186480afc719e5f770590c2ef6c"
+                    "url": "https://files.pythonhosted.org/packages/a7/48/fbfb4dc72bed0fe31fe045fb30e924909ad03f717c36694351612973b1a9/scikit_learn-1.5.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+                    "sha256": "f7284ade780084d94505632241bf78c44ab3b6f1e8ccab3d2af58e0e950f9c12"
                 },
                 {
                     "type": "file",
                     "only-arches": [ "aarch64" ],
-                    "url": "https://files.pythonhosted.org/packages/e5/a7/6f4ae76f72ae9de162b97acbf1f53acbe404c555f968d13da21e4112a002/scikit_learn-1.3.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
-                    "sha256": "cb06f8dce3f5ddc5dee1715a9b9f19f20d295bed8e3cd4fa51e1d050347de525"
+                    "url": "https://files.pythonhosted.org/packages/b1/c8/f08313f9e2e656bd0905930ae8bf99a573ea21c34666a813b749c338202f/scikit_learn-1.5.2-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+                    "sha256": "178ddd0a5cb0044464fc1bfc4cca5b1833bfc7bb022d70b05db8530da4bb3dd3"
                 },
                 {
                     "type": "file",
@@ -140,13 +126,13 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/bb/84/468592513867604800592b58d106f5e7e6ef61de226b59c1e9313917fbbb/numba-0.59.1.tar.gz",
-                    "sha256": "76f69132b96028d2774ed20415e8c528a34e3299a40581bae178f0994a2f370b"
+                    "url": "https://files.pythonhosted.org/packages/1c/a0/e21f57604304aa03ebb8e098429222722ad99176a4f979d34af1d1ee80da/numba-0.61.2.tar.gz",
+                    "sha256": "8750ee147940a6637b80ecf7f95062185ad8726c8c28a2295b8ec1160a196f7d"
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/7c/91/d3ba0401e62d7e42816bc7d97b82d19c95c164b3e149a87c0a1c026a735e/joblib-1.1.1-py2.py3-none-any.whl",
-                    "sha256": "f9d6c3cdf2a7778e9058e10e9dba028e47771a1a355e5768f46704bf05342eba"
+                    "url": "https://files.pythonhosted.org/packages/7b/91/984aca2ec129e2757d1e4e3c81c3fcda9d0f85b74670a094cc443d9ee949/joblib-1.5.3-py3-none-any.whl",
+                    "sha256": "5fc3c5039fc5ca8c0276333a188bbd59d6b7ab37fe6632daa76bc7f9ec18e713"
                 },
                 {
                     "type": "file",
@@ -157,6 +143,26 @@
                     "type": "file",
                     "url": "https://files.pythonhosted.org/packages/57/8d/30aa32745af16af0a9a650115fbe81bde7c610ed5c21b381fca0196f3a7f/audioread-3.0.1-py3-none-any.whl",
                     "sha256": "4cdce70b8adc0da0a3c9e0d85fb10b3ace30fbdf8d1670fd443929b61d117c33"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/c3/52/5fbb203394cc852334d1575cc020f6bcec768d2265355984dfd361968f36/standard_aifc-3.13.0-py3-none-any.whl",
+                    "sha256": "f7ae09cc57de1224a0dd8e3eb8f73830be7c3d0bc485de4c1f82b4a7f645ac66"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/7a/90/a5c1084d87767d787a6caba615aa50dc587229646308d9420c960cb5e4c0/standard_chunk-3.13.0-py3-none-any.whl",
+                    "sha256": "17880a26c285189c644bd5bd8f8ed2bdb795d216e3293e6dbe55bbd848e2982c"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/34/ae/e3707f6c1bc6f7aa0df600ba8075bfb8a19252140cd595335be60e25f9ee/standard_sunau-3.13.0-py3-none-any.whl",
+                    "sha256": "53af624a9529c41062f4c2fd33837f297f3baa196b0cfceffea6555654602622"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/38/53/946db57842a50b2da2e0c1e34bd37f36f5aadba1a929a3971c5d7841dbca/audioop_lts-0.2.2.tar.gz",
+                    "sha256": "64d0c62d88e67b98a1a5e71987b7aa7b5bcffc7dcee65b635823dbdd0a8dbbd0"
                 },
                 {
                     "type": "file",
