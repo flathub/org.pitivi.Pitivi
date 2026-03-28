@@ -437,7 +437,8 @@
                     "type": "patch",
                     "paths": [
 			"patches/pitivi-appdata.patch",
-			"patches/pitivi-viewer.patch"
+			"patches/pitivi-viewer.patch",
+			"patches/pitivi-thumbnails.patch"
 		    ]
                 }
             ]
